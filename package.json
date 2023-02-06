@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/cinzel-decorative": "^4.5.10",
+    "@fontsource/raleway": "^4.5.12",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -47,9 +49,11 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "styled-components": "^5.3.6"
   },
   "jest": {
     "collectCoverageFrom": [
