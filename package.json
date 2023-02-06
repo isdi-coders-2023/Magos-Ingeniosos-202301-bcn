@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
@@ -47,5 +47,13 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "src/**/*.ts",
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts"
+    ]
   }
 }
