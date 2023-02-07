@@ -37,13 +37,15 @@ const HomePage = (): JSX.Element => {
           <article></article>
         </li>
       </ul>
-      <button>
-        <i className="fa-solid fa-circle-arrow-left"></i>
-      </button>
-      <span>Page 1 of 10</span>
-      <button>
-        <i className="fa-solid fa-circle-arrow-right"></i>
-      </button>
+      <div>
+        <button>
+          <i className="fa-solid fa-circle-arrow-left"></i>
+        </button>
+        <span>Page 1 of 10</span>
+        <button>
+          <i className="fa-solid fa-circle-arrow-right"></i>
+        </button>
+      </div>
     </>
   );
 };

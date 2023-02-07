@@ -1,13 +1,5 @@
-import GlobalStyle from "./globalStyles";
-import HomePage from "./components/HomePage";
-
 const App = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <HomePage />
-    </>
-  );
+  return <></>;
 };
 
 export default App;

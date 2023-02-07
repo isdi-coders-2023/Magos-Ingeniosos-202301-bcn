@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import "@fontsource/cinzel-decorative";
 import "@fontsource/raleway";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   *, ::before, ::after {
     box-sizing: border-box;
   }
@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: "Raleway", sans-serif;
     font-size: 1.25rem;
+    background-color: #2b2f3b;
+    color:#fff
   }
 
   ul {
@@ -35,4 +37,4 @@ const GlobalStyle = createGlobalStyle`
   };
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
