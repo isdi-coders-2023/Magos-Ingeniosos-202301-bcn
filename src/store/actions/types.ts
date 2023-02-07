@@ -1,6 +1,10 @@
 import { Photos } from "../../data/types";
 
+export enum PhotoActionType {
+  loadPhotos,
+  default,
+}
 export interface LoadPhotosAction {
-  type: "loadPhotos";
+  type: PhotoActionType;
   payload: Photos;
 }

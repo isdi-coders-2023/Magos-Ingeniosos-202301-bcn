@@ -1,5 +1,11 @@
+import Layout from "./pages/Layout/Layout";
+
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <Layout />
+    </>
+  );
 };
 
 export default App;
