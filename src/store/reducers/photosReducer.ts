@@ -1,11 +1,11 @@
 import { Photos } from "../../data/types";
-import { LoadPhotosAction } from "../actions/types";
+import { LoadPhotosAction, PhotoActionType } from "../actions/types";
 
 const photosReducer = (currentPhotos: Photos, action: LoadPhotosAction) => {
   let newPhotos;
 
   switch (action.type) {
-    case "loadPhotos":
+    case PhotoActionType.loadPhotos:
       newPhotos = [...(action as LoadPhotosAction).payload];
       break;
     default:
