@@ -1,9 +1,9 @@
-import GlobalStyle from "./globalStyles";
+import Layout from "./pages/Layout/Layout";
 
 const App = () => {
   return (
     <>
-      <GlobalStyle />
+      <Layout />
     </>
   );
 };
