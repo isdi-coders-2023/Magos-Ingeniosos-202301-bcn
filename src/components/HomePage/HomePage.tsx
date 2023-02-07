@@ -1,8 +1,10 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Filter from "../FilterComponents/FilterComponent";
 
 const HomePage = (): JSX.Element => {
   return (
     <>
+      <Filter />
       <ul>
         <li>
           <article></article>
