@@ -1,10 +1,10 @@
 import { Photos } from "../../data/types";
 import { LoadPhotosAction } from "../actions/types";
 
-const photosReducer = (currentPhotos: Photos, action: LoadPhotosAction) => {
+const photosReducer = (currentPhotos?: Photos, action?: LoadPhotosAction) => {
   let newPhotos;
 
-  switch (action.type) {
+  switch (action?.type) {
     case "loadPhotos":
       newPhotos = [...(action as LoadPhotosAction).payload];
       break;
