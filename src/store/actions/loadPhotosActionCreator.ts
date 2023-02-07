@@ -1,7 +1,7 @@
 import { Photos } from "../../data/types";
-import { LoadPhotosAction } from "./types";
+import { LoadPhotosAction, PhotoActionType } from "./types";
 
 export const loadPhotosActionCreator = (photos: Photos): LoadPhotosAction => ({
-  type: "loadPhotos",
+  type: PhotoActionType.loadPhotos,
   payload: photos,
 });
