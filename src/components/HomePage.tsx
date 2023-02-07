@@ -1,28 +1,30 @@
-import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): JSX.Element => {
   return (
     <>
       <div>
         <span>Filter by</span>
-        <ul className="card_container">
-          <li>
-            <button>
-              <i className="fa-brands fa-fort-awesome"></i>
-            </button>
-          </li>
-          <li>
-            <button>
-              <i className="fa-solid fa-dragon"></i>
-            </button>
-          </li>
-          <li>
-            <button>
-              <i className="fa-solid fa-hat-wizard"></i>
-            </button>
-          </li>
-        </ul>
+        <HomePageStyled>
+          <ul className="card_container">
+            <li>
+              <button>
+                <i className="fa-brands fa-fort-awesome"></i>
+              </button>
+            </li>
+            <li>
+              <button>
+                <i className="fa-solid fa-dragon"></i>
+              </button>
+            </li>
+            <li>
+              <button>
+                <i className="fa-solid fa-hat-wizard"></i>
+              </button>
+            </li>
+          </ul>
+        </HomePageStyled>
       </div>
       <ul>
         <li>
@@ -45,5 +47,5 @@ const HomePage = (): JSX.Element => {
     </>
   );
 };
-console.log(HomePage);
+
 export default HomePage;
