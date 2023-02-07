@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const HomePageStyled = styled.ul`
+const FilterStyled = styled.ul`
   .card_container {
     display: flex;
   }
 `;
-export default HomePageStyled;
+export default FilterStyled;
