@@ -25,10 +25,6 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  h1 {
-    font-family: "Cinzel Decorative";
-  }
-
   button {
     font-family: inherit;
     border: none;
