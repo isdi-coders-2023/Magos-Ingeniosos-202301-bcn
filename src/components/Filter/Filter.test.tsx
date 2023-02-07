@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Filter from "./FilterComponent";
+import Filter from "./Filter";
 
 describe("Given a Filter Component", () => {
   describe("When rendered", () => {

@@ -1,5 +1,6 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Filter from "../FilterComponents/FilterComponent";
+import Filter from "../Filter/Filter";
+import Photo from "../Photo/Photo";
 
 const HomePage = (): JSX.Element => {
   return (
@@ -7,13 +8,13 @@ const HomePage = (): JSX.Element => {
       <Filter />
       <ul>
         <li>
-          <article></article>
+          <Photo />
         </li>
         <li>
-          <article></article>
+          <Photo />
         </li>
         <li>
-          <article></article>
+          <Photo />
         </li>
       </ul>
       <div>
