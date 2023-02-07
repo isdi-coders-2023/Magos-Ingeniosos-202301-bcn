@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import GlobalStyles from "../../GlobalStyles";
 import LayoutStyled from "./LayoutStyled";
 
 const Layout = (): JSX.Element => {
@@ -8,6 +9,7 @@ const Layout = (): JSX.Element => {
         <span className="main-title">Wiztagram</span>
       </header>
       <main>
+        <GlobalStyles />
         <Outlet />
       </main>
     </LayoutStyled>
