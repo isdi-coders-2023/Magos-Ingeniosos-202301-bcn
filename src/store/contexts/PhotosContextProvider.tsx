@@ -1,3 +1,5 @@
+import { useReducer } from "react";
+import photosReducer from "../reducers/photosReducer";
 import PhotosContext from "./PhotosContext";
 
 interface PhotosContextProviderProps {
@@ -7,7 +9,13 @@ interface PhotosContextProviderProps {
 const PhotosContextProvider = ({
   children,
 }: PhotosContextProviderProps): JSX.Element => {
-  return <PhotosContext.Provider value={{}}>{children}</PhotosContext.Provider>;
+  const [photos, dispatch] = useReducer(photosReducer, []);
+
+  return (
+    <PhotosContext.Provider value={{ photos, dispatch }}>
+      {children}
+    </PhotosContext.Provider>
+  );
 };
 
 export default PhotosContextProvider;

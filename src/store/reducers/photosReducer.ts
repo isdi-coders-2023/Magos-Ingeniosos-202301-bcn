@@ -6,7 +6,7 @@ const photosReducer = (currentPhotos: Photos, action: LoadPhotosAction) => {
 
   switch (action.type) {
     case PhotoActionType.loadPhotos:
-      newPhotos = [...(action as LoadPhotosAction).payload];
+      newPhotos = [...action.payload];
       break;
     default:
       newPhotos = currentPhotos;

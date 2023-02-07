@@ -2,18 +2,18 @@ interface PhotoTag {
   title: string;
 }
 
-export interface PhotoData {
-  results: [
-    {
-      urls: {
-        regular: string;
-      };
-      tags: PhotoTag[];
-      user: {
-        name: string;
-      };
-    }
-  ];
+interface PhotoData {
+  urls: {
+    regular: string;
+  };
+  tags: PhotoTag[];
+  user: {
+    name: string;
+  };
+}
+
+export interface PhotoDataList {
+  results: PhotoData[];
 }
 
 export interface Photo {
