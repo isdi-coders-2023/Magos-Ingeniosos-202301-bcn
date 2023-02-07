@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     border: none;
     font-size: inherit;
+    background-color: transparent;
   };
 `;
 
