@@ -8,19 +8,13 @@ const HomePage = (): JSX.Element => {
       <Filter />
       <ul>
         <li>
-          <article>
-            <Photo />
-          </article>
+          <Photo />
         </li>
         <li>
-          <article>
-            <Photo />
-          </article>
+          <Photo />
         </li>
         <li>
-          <article>
-            <Photo />
-          </article>
+          <Photo />
         </li>
       </ul>
       <div>
