@@ -1,7 +1,7 @@
 import { loadPhotosActionCreator } from "./loadPhotosActionCreator";
 
 describe("Given a loadPhotosActionCreator function", () => {
-  describe("When given an array of photos data", () => {
+  describe("When it receives an array of photos data", () => {
     test("Then it should return an action object with property 'type'", () => {
       const photos = [
         { url: "", tags: [], photographer: "" },
