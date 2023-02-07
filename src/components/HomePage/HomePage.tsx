@@ -1,31 +1,10 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import HomePageStyled from "./HomePageStyled";
+import Filter from "../FilterComponents/FilterComponent";
 
 const HomePage = (): JSX.Element => {
   return (
     <>
-      <div>
-        <span>Filter by</span>
-        <HomePageStyled>
-          <ul className="card_container">
-            <li>
-              <button>
-                <i className="fa-brands fa-fort-awesome"></i>
-              </button>
-            </li>
-            <li>
-              <button>
-                <i className="fa-solid fa-dragon"></i>
-              </button>
-            </li>
-            <li>
-              <button>
-                <i className="fa-solid fa-hat-wizard"></i>
-              </button>
-            </li>
-          </ul>
-        </HomePageStyled>
-      </div>
+      <Filter />
       <ul>
         <li>
           <article></article>
