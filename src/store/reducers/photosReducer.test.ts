@@ -1,4 +1,5 @@
 import { loadPhotosActionCreator } from "../actions/loadPhotosActionCreator";
+import { PhotoActionType } from "../actions/types";
 import photosReducer from "../reducers/photosReducer";
 
 describe("Given a photosReducer function", () => {
@@ -10,7 +11,9 @@ describe("Given a photosReducer function", () => {
         { url: "", tags: [], photographer: "" },
       ];
 
-      const result = photosReducer(photos);
+      const defaultAction = { type: PhotoActionType.default, payload: [] };
+
+      const result = photosReducer(photos, defaultAction);
 
       expect(result).toStrictEqual(photos);
     });
