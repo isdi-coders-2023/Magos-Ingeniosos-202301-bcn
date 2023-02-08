@@ -1,8 +1,9 @@
 import Photo from "../Photo/Photo";
+import PhotoListStyled from "./PhotoListStyled";
 
 const PhotoList = (): JSX.Element => {
   return (
-    <ul className="photo__list list">
+    <PhotoListStyled className="photo__list list">
       <li>
         <Photo />
       </li>
@@ -30,7 +31,7 @@ const PhotoList = (): JSX.Element => {
       <li>
         <Photo />
       </li>
-    </ul>
+    </PhotoListStyled>
   );
 };
 
