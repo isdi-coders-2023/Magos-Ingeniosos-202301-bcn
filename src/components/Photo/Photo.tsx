@@ -4,7 +4,7 @@ const Photo = (): JSX.Element => {
   return (
     <PhotoStyled className="photo">
       <img
-        className="photo_img"
+        className="photo__img"
         src="./img/regular.jpg"
         alt="Melquiades the mage"
       />

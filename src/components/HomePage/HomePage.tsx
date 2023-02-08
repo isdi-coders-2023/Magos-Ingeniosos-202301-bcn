@@ -9,7 +9,6 @@ const HomePage = (): JSX.Element => {
       <div className="title">
         <h1>All Photos</h1>
       </div>
-
       <Filter />
       <ul>
         <li>
