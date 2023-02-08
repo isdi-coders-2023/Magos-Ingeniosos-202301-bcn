@@ -16,7 +16,7 @@ export interface PhotoDataList {
   results: PhotoData[];
 }
 
-export interface Photo {
+export interface PhotoStructure {
   url: string;
   tags: string[];
   photographer: string;
@@ -24,4 +24,4 @@ export interface Photo {
 
 export type PhotosData = PhotoData[];
 
-export type Photos = Photo[];
+export type PhotosStructure = PhotoStructure[];
