@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useMemo, useReducer } from "react";
 import photosReducer from "../reducers/photosReducer";
 import PhotosContext from "./PhotosContext";
 
@@ -10,9 +10,9 @@ const PhotosContextProvider = ({
   children,
 }: PhotosContextProviderProps): JSX.Element => {
   const [photos, dispatch] = useReducer(photosReducer, []);
-
+  const photosValue = useMemo(() => ({ photos, dispatch }), [photos]);
   return (
-    <PhotosContext.Provider value={{ photos, dispatch }}>
+    <PhotosContext.Provider value={photosValue}>
       {children}
     </PhotosContext.Provider>
   );
