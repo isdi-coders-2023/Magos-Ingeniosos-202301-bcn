@@ -15,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
     color:#fff
   }
 
+  h2 {
+    margin: 0;
+  }
+
   ul {
     list-style: none;
     padding: 0;
