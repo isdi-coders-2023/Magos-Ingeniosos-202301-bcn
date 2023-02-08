@@ -1,7 +1,8 @@
 import HomePage from "./components/HomePage/HomePage";
+
 import Layout from "./pages/Layout/Layout";
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <>
       <Layout />

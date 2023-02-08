@@ -1,15 +1,19 @@
 import { PhotosStructure } from "../../data/types";
-import { LoadPhotosAction, PhotoActionType } from "../actions/types";
+import {
+  LoadPhotosAction,
+  PhotoActionType,
+  PhotosAction,
+} from "../actions/types";
 
 const photosReducer = (
   currentPhotos: PhotosStructure,
-  action: LoadPhotosAction
+  action: PhotosAction
 ) => {
   let newPhotos;
 
   switch (action.type) {
     case PhotoActionType.loadPhotos:
-      newPhotos = [...action.payload];
+      newPhotos = [...(action as LoadPhotosAction).payload];
       break;
     default:
       newPhotos = currentPhotos;
