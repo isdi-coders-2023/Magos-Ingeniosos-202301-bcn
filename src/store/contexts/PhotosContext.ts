@@ -1,10 +1,10 @@
-import { createContext } from "vm";
+import { createContext } from "react";
 import { PhotosStructure } from "../../data/types";
-import { LoadPhotosAction } from "../actions/types";
+import { PhotosAction } from "../actions/types";
 
 interface PhotosContextStructure {
   photos: PhotosStructure;
-  dispatch: React.Dispatch<LoadPhotosAction>;
+  dispatch: React.Dispatch<PhotosAction>;
 }
 
 const PhotosContext = createContext({} as PhotosContextStructure);

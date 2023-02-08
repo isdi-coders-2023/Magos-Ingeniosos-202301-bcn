@@ -1,6 +1,6 @@
 import Layout from "./components/Layout/Layout";
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <>
       <Layout />
