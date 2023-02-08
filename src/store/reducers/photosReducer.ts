@@ -1,7 +1,10 @@
-import { Photos } from "../../data/types";
+import { PhotosStructure } from "../../data/types";
 import { LoadPhotosAction, PhotoActionType } from "../actions/types";
 
-const photosReducer = (currentPhotos: Photos, action: LoadPhotosAction) => {
+const photosReducer = (
+  currentPhotos: PhotosStructure,
+  action: LoadPhotosAction
+) => {
   let newPhotos;
 
   switch (action.type) {
