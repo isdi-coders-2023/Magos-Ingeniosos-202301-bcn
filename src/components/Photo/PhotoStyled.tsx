@@ -33,6 +33,8 @@ const PhotoStyled = styled.article`
   }
 
   .tags {
+    display: flex;
+    gap: 15px;
     font-size: 18px;
     padding-left: 12px;
     padding-left: 12px;

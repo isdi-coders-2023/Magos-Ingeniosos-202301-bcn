@@ -1,16 +1,17 @@
 import PhotoStyled from "./PhotoStyled";
+import { PhotoStructure } from "../../data/types";
 
-const Photo = (): JSX.Element => {
+interface PhotoProps extends PhotoStructure {}
+
+const Photo = ({ url, photographer, tags }: PhotoProps): JSX.Element => {
   return (
     <PhotoStyled className="photo">
-      <img
-        className="photo__img"
-        src="./img/regular.jpg"
-        alt="Melquiades the mage"
-      />
+      <img className="photo__img" src={url} alt="Melquiades the mage" />
       <div className="photo__description">
-        <h2 className="photographer">Melquiades Heeringa</h2>
-        <span className="tags">#black #witch #magic</span>
+        <h2 className="photographer">{photographer}</h2>
+        <ul className="tags">
+          <li>#{tags[0]}</li> <li>#{tags[1]}</li> <li>#{tags[2]}</li>
+        </ul>
       </div>
     </PhotoStyled>
   );
