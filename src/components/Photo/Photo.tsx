@@ -8,8 +8,8 @@ const Photo = (): JSX.Element => {
         src="./img/regular.jpg"
         alt="Melquiades the mage"
       />
-      <div className="photo__tag">
-        <h2 className="photograf">Melquiades Heeringa</h2>
+      <div className="photo__description">
+        <h2 className="photographer">Melquiades Heeringa</h2>
         <span className="tags">#black #witch #magic</span>
       </div>
     </PhotoStyled>
