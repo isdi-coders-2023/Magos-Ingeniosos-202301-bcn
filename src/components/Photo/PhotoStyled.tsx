@@ -6,7 +6,7 @@ const PhotoStyled = styled.article`
   height: 355px;
   width: 312px;
   border: 1px solid #fff;
-  border-radius: 10% 10% 10% 10%;
+  border-radius: 15px;
 
   .photo__description {
     display: flex;
@@ -17,10 +17,8 @@ const PhotoStyled = styled.article`
   }
 
   .photo__img {
-    border-radius: 10% 10% 0% 0%;
-    max-height: 72%;
-    max-width: 100%;
-    max-height: 72%;
+    border-radius: 15px 15px 0 0;
+    height: 255px;
     max-width: 100%;
     justify-items: center;
     object-fit: cover;
@@ -33,6 +31,9 @@ const PhotoStyled = styled.article`
   }
 
   .tags {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
     font-size: 18px;
     padding-left: 12px;
     padding-left: 12px;

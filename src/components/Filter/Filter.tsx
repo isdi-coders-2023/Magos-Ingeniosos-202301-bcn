@@ -8,17 +8,17 @@ const Filter = (): JSX.Element => {
         <span>Filter by</span>
         <ul className="card_container">
           <li>
-            <button>
+            <button className="filter__button">
               <i className="fa-brands fa-fort-awesome"></i>
             </button>
           </li>
           <li>
-            <button>
+            <button className="filter__button">
               <i className="fa-solid fa-dragon"></i>
             </button>
           </li>
           <li>
-            <button>
+            <button className="filter__button">
               <i className="fa-solid fa-hat-wizard"></i>
             </button>
           </li>
