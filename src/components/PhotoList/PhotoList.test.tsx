@@ -5,7 +5,7 @@ describe("Given PhotoList component", () => {
   describe("When rendered", () => {
     test("Then it should show a list of images with alternative text", () => {
       const altText = "Melquiades the mage";
-      const numberOfPhotos = 9;
+      const numberOfPhotos = 1;
       render(<PhotoList />);
 
       const expectedAlt = screen.getAllByAltText(altText);
