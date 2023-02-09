@@ -3,6 +3,12 @@ import "@fontsource/cinzel-decorative";
 import "@fontsource/raleway";
 
 const GlobalStyles = createGlobalStyle`
+
+  :root {
+    --primaryColor: #2b2f3b;
+    --accentColor: #eb7d00;
+  }
+
   *, ::before, ::after {
     box-sizing: border-box;
   }
@@ -11,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: "Raleway", sans-serif;
     font-size: 1.25rem;
-    background-color: #2b2f3b;
+    background-color: var(--primaryColor);
     color:#fff
   }
 
