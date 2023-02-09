@@ -10,7 +10,7 @@ const Photo = ({ url, photographer, tags }: PhotoProps): JSX.Element => {
       <div className="photo__description">
         <h2 className="photographer">{photographer}</h2>
         <ul className="tags">
-          <li>#{tags[0]}</li> <li>#{tags[1]}</li> <li>#{tags[2]}</li>
+          <li>{tags[0]}</li> <li>{tags[1]}</li> <li>{tags[2]}</li>
         </ul>
       </div>
     </PhotoStyled>
