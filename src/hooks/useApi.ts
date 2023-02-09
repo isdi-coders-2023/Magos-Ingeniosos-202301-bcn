@@ -16,6 +16,7 @@ const useApi = () => {
 
       const photos = photoApi.results.map((result) => ({
         id: result.id,
+        alt: result.alt_description,
         url: result.urls.small,
         tags: result.tags.map((tag) => `#${tag.title}`),
         photographer: result.user.name,

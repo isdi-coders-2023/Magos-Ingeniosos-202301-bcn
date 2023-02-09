@@ -12,6 +12,7 @@ const PhotoList = (): JSX.Element => {
         <li key={photo.id}>
           <Photo
             id={photo.id}
+            alt={photo.alt}
             url={photo.url}
             tags={photo.tags}
             photographer={photo.photographer}

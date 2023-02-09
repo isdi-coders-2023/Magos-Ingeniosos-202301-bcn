@@ -3,13 +3,13 @@ import { PhotoStructure } from "../../data/types";
 
 interface PhotoProps extends PhotoStructure {}
 
-const Photo = ({ url, photographer, tags }: PhotoProps): JSX.Element => {
+const Photo = ({ url, alt, photographer, tags }: PhotoProps): JSX.Element => {
   return (
     <PhotoStyled className="photo">
       <img
         className="photo__img"
         src={url}
-        alt="Melquiades the mage"
+        alt={alt}
         width="312"
         height="255"
       />

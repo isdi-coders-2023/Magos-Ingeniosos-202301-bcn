@@ -7,21 +7,22 @@ const PhotoStyled = styled.article`
   width: 312px;
   border: 1px solid #fff;
   border-radius: 15px;
+  .photo {
+    &__description {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      gap: 10px;
+      padding: 10px 0;
+    }
 
-  .photo__description {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .photo__img {
-    border-radius: 15px 15px 0 0;
-    height: 255px;
-    max-width: 100%;
-    justify-items: center;
-    object-fit: cover;
+    &__img {
+      border-radius: 15px 15px 0 0;
+      height: 255px;
+      max-width: 100%;
+      justify-items: center;
+      object-fit: cover;
+    }
   }
 
   .photographer {
