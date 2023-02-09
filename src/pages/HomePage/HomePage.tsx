@@ -1,6 +1,6 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Filter from "../Filter/Filter";
-import PhotoList from "../PhotoList/PhotoList";
+import Filter from "../../components/Filter/Filter";
+import PhotoList from "../../components/PhotoList/PhotoList";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): JSX.Element => {

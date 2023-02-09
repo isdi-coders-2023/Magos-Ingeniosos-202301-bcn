@@ -4,7 +4,12 @@ export enum PhotoActionType {
   loadPhotos,
   default,
 }
-export interface LoadPhotosAction {
+
+export interface PhotosAction {
   type: PhotoActionType;
+  payload?: unknown;
+}
+
+export interface LoadPhotosAction extends PhotosAction {
   payload: PhotosStructure;
 }
