@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { PhotoDataList } from "../data/types";
 
-const handler = rest.get(
+export const handlerSuccess = rest.get(
   `https://api.unsplash.com/search/photos`,
   (_, res, ctx) =>
     res(
@@ -22,4 +22,7 @@ const handler = rest.get(
     )
 );
 
-export default handler;
+export const handlerError = rest.get(
+  `https://api.unsplash.com/search/photos`,
+  (_, res, ctx) => res(ctx.status(500), ctx.json(null))
+);
