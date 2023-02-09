@@ -7,7 +7,7 @@ const LayoutStyled = styled.div`
     align-items: center;
     justify-content: center;
     background-color: inherit;
-    border-bottom: 3px solid #eb7d00;
+    border-bottom: 3px solid var(--accentColor);
   }
 
   .main-title {

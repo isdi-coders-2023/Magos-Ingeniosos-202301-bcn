@@ -8,7 +8,7 @@ const store = mockStore;
 const action = mockAction;
 
 describe("Given a useApi function", () => {
-  describe("When getPhotos is called", () => {
+  describe("When getPhotos is called with a valid action", () => {
     test("Then dispatch should be invoked", async () => {
       const {
         result: {
