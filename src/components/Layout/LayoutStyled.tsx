@@ -7,7 +7,9 @@ const LayoutStyled = styled.div`
     align-items: center;
     justify-content: center;
     background-color: inherit;
-    border-bottom: 3px solid #eb7d00;
+    border-bottom: 3px solid var(--accentColor);
+    flex-direction: column;
+    padding: 50px;
   }
 
   .main-title {
@@ -19,10 +21,7 @@ const LayoutStyled = styled.div`
     .main-header {
       height: 95px;
       justify-content: space-between;
-    }
-
-    .main-title {
-      padding-left: 50px;
+      flex-direction: row;
     }
   }
 `;

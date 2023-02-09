@@ -18,7 +18,7 @@ export interface PhotoDataList {
 }
 
 export interface PhotoStructure {
-  key?: string;
+  id: string;
   url: string;
   tags: string[];
   photographer: string;

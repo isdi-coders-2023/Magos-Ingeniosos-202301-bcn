@@ -15,6 +15,7 @@ const useApi = () => {
       const photoApi = (await response.json()) as PhotoDataList;
 
       const photos = photoApi.results.map((result) => ({
+        id: result.id,
         url: result.urls.regular,
         tags: result.tags.map((tag) => `#${tag.title}`),
         photographer: result.user.name,
