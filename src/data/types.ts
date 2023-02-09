@@ -5,7 +5,7 @@ interface PhotoTag {
 interface PhotoData {
   id: string;
   urls: {
-    regular: string;
+    small: string;
   };
   tags: PhotoTag[];
   user: {

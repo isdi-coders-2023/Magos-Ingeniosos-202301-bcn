@@ -11,7 +11,7 @@ export const handlerSuccess = rest.get(
           {
             id: "",
             urls: {
-              regular: "",
+              small: "",
             },
             tags: [{ title: "" }, { title: "" }, { title: "" }],
             user: {
