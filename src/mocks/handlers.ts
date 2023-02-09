@@ -9,6 +9,7 @@ const handler = rest.get(
       ctx.json({
         results: [
           {
+            id: "",
             urls: {
               regular: "",
             },
