@@ -4,7 +4,9 @@ import Photo from "./Photo";
 describe("Given a Component", () => {
   describe("When rendered", () => {
     test("Then it should show text Melquiades Heeringa", () => {
-      render(<Photo url={""} tags={[]} photographer={"Melquiades Heeringa"} />);
+      render(
+        <Photo id="" url="" tags={[]} photographer={"Melquiades Heeringa"} />
+      );
 
       const expectedText = "Melquiades Heeringa";
 

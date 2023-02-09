@@ -2,7 +2,11 @@ import { PhotosStructure } from "../data/types";
 import { PhotosAction, PhotoActionType } from "../store/actions/types";
 
 export const dispatch: React.Dispatch<PhotosAction> = jest.fn();
-export const photos: PhotosStructure = [];
+export const photos: PhotosStructure = [
+  { id: "", url: "", tags: [], photographer: "" },
+  { id: "", url: "", tags: [], photographer: "" },
+  { id: "", url: "", tags: [], photographer: "" },
+];
 
 export const mockStore = { dispatch, photos };
 export const mockDispatch = jest.spyOn(mockStore, "dispatch");
@@ -16,6 +20,7 @@ export const mockAction: MockAction = {
   type: PhotoActionType.loadPhotos,
   payload: [
     {
+      id: "",
       photographer: "",
       tags: [{ title: "" }, { title: "" }, { title: "" }].map(
         (tag) => `#${tag.title}`

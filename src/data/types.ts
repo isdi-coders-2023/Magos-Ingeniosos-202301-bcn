@@ -3,6 +3,7 @@ interface PhotoTag {
 }
 
 interface PhotoData {
+  id: string;
   urls: {
     regular: string;
   };
@@ -17,6 +18,7 @@ export interface PhotoDataList {
 }
 
 export interface PhotoStructure {
+  id: string;
   url: string;
   tags: string[];
   photographer: string;

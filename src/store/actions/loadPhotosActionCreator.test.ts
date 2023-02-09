@@ -4,9 +4,9 @@ describe("Given a loadPhotosActionCreator function", () => {
   describe("When it receives an array of photos data", () => {
     test("Then it should return an action object with property 'type'", () => {
       const photos = [
-        { url: "", tags: [], photographer: "" },
-        { url: "", tags: [], photographer: "" },
-        { url: "", tags: [], photographer: "" },
+        { id: "", url: "", tags: [], photographer: "" },
+        { id: "", url: "", tags: [], photographer: "" },
+        { id: "", url: "", tags: [], photographer: "" },
       ];
 
       const result = loadPhotosActionCreator(photos);
@@ -16,9 +16,9 @@ describe("Given a loadPhotosActionCreator function", () => {
 
     test("Then it should return an action object with property 'payload'", () => {
       const photos = [
-        { url: "", tags: [], photographer: "" },
-        { url: "", tags: [], photographer: "" },
-        { url: "", tags: [], photographer: "" },
+        { id: "", url: "", tags: [], photographer: "" },
+        { id: "", url: "", tags: [], photographer: "" },
+        { id: "", url: "", tags: [], photographer: "" },
       ];
 
       const result = loadPhotosActionCreator(photos);

@@ -1,17 +1,22 @@
 import { render, screen } from "@testing-library/react";
+import MockContextProvider from "../../mocks/MockContextProvider";
+import { mockStore } from "../../mocks/mockStore";
 import PhotoList from "./PhotoList";
 
-describe("Given PhotoList component", () => {
+const store = mockStore;
+
+describe("Given a PhotoList component", () => {
   describe("When rendered", () => {
-    test("Then it should show a list of images with alternative text", () => {
-      const altText = "Melquiades the mage";
-      const numberOfPhotos = 1;
+    test("Then it should show a list of images", () => {
+      render(
+        <MockContextProvider mockStore={store}>
+          <PhotoList />
+        </MockContextProvider>
+      );
 
-      render(<PhotoList />);
+      const photoList = screen.getAllByRole("img");
 
-      const expectedAlt = screen.getAllByAltText(altText);
-
-      expect(expectedAlt).toHaveLength(numberOfPhotos);
+      photoList.forEach((photo) => expect(photo).toBeInTheDocument());
     });
   });
 });

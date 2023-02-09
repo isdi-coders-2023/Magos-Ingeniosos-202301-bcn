@@ -9,6 +9,7 @@ export const handlerSuccess = rest.get(
       ctx.json({
         results: [
           {
+            id: "",
             urls: {
               regular: "",
             },
