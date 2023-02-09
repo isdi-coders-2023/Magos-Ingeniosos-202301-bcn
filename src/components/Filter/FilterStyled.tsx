@@ -14,13 +14,15 @@ const FilterStyled = styled.div`
       border-radius: 15px;
       gap: 35px;
       justify-content: center;
+      height: 35px;
+      align-items: center;
     }
   }
 
   .card_container {
     display: flex;
     width: 312px;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `;
 
