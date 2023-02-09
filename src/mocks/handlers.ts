@@ -10,6 +10,7 @@ export const handlerSuccess = rest.get(
         results: [
           {
             id: "",
+            alt_description: "",
             urls: {
               regular: "",
             },

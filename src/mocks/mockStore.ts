@@ -3,9 +3,9 @@ import { PhotosAction, PhotoActionType } from "../store/actions/types";
 
 export const dispatch: React.Dispatch<PhotosAction> = jest.fn();
 export const photos: PhotosStructure = [
-  { id: "", url: "", tags: [], photographer: "" },
-  { id: "", url: "", tags: [], photographer: "" },
-  { id: "", url: "", tags: [], photographer: "" },
+  { id: "", alt: "", url: "", tags: [], photographer: "" },
+  { id: "", alt: "", url: "", tags: [], photographer: "" },
+  { id: "", alt: "", url: "", tags: [], photographer: "" },
 ];
 
 export const mockStore = { dispatch, photos };
@@ -21,6 +21,7 @@ export const mockAction: MockAction = {
   payload: [
     {
       id: "",
+      alt: "",
       photographer: "",
       tags: [{ title: "" }, { title: "" }, { title: "" }].map(
         (tag) => `#${tag.title}`
