@@ -17,15 +17,6 @@ const HomePage = (): JSX.Element => {
       <h1 className="title">All Photos</h1>
       <Filter />
       <PhotoList />
-      <div>
-        <button aria-label="Previous page">
-          <i className="fa-solid fa-circle-arrow-left"></i>
-        </button>
-        <span>Page 1 of 10</span>
-        <button aria-label="Next page">
-          <i className="fa-solid fa-circle-arrow-right"></i>
-        </button>
-      </div>
     </HomePageStyled>
   );
 };

@@ -3,7 +3,7 @@ import {
   LoadPhotosAction,
   PhotoActionType,
   PhotosAction,
-} from "../../actions/types";
+} from "../../actions/photos/types";
 
 const photosReducer = (
   currentPhotos: PhotosStructure,

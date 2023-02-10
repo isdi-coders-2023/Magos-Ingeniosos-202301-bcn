@@ -1,5 +1,5 @@
 import { PhotosStructure } from "../data/types";
-import { PhotosAction, PhotoActionType } from "../store/actions/types";
+import { PhotoActionType, PhotosAction } from "../store/actions/photos/types";
 
 export const dispatch: React.Dispatch<PhotosAction> = jest.fn();
 export const photos: PhotosStructure = [

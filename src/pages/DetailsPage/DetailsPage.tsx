@@ -14,7 +14,7 @@ const DetailsPage = (): JSX.Element => {
 
   return (
     <>
-      {photos.length && (
+      {photos.length > 0 && (
         <DetailsPageStyled className="details__styled">
           <div className="details__container">
             <img
