@@ -4,7 +4,7 @@ const MainNavigationStyled = styled.nav`
   ul {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 50px;
   }
 
   .active {

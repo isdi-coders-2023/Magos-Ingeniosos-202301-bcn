@@ -7,6 +7,7 @@ const PhotoStyled = styled.article`
   width: 312px;
   border: 1px solid #fff;
   border-radius: 15px;
+
   .photo {
     &__description {
       display: flex;

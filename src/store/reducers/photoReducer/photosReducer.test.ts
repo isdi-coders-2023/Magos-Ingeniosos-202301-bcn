@@ -1,6 +1,6 @@
-import { loadPhotosActionCreator } from "../actions/loadPhotosActionCreator";
-import { PhotoActionType } from "../actions/types";
-import photosReducer from "../reducers/photosReducer";
+import { loadPhotosActionCreator } from "../../actions/loadPhotosActionCreator";
+import { PhotoActionType } from "../../actions/types";
+import photosReducer from "./photosReducer";
 
 const photos = [
   { id: "", alt: "", url: "", tags: [], photographer: "" },
