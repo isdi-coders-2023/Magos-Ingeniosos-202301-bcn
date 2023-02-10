@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a GlobalStyles component When the document renders Then it should have the styles defined in GlobalStyles 1`] = `<head />`;
+
+exports[`Given a GlobalStyles component When the document renders Then the document head should include those styles 1`] = `<head />`;
