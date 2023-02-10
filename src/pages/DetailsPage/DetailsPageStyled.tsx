@@ -4,13 +4,10 @@ const DetailsPageStyled = styled.div`
   display: flex;
   gap: 35px;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   padding: 0 50px;
-
-  h2 {
-    font-size: 36px;
-  }
 
   .details {
     &__container {
@@ -23,25 +20,40 @@ const DetailsPageStyled = styled.div`
     &__image {
       border-radius: 15px;
       border: 1px solid #fff;
+      width: 100%;
+      height: fit-content;
     }
 
-    &__li {
-      list-style: none;
+    &__photographer {
+      font-size: 2.25rem;
+    }
+
+    &__tags {
+      align-self: flex-end;
+      color: var(--accentColor);
+    }
+
+    &__description {
+      text-align: justify;
+    }
+
+    &__username {
+      color: var(--accentColor);
+      padding: 0 10px;
+    }
+
+    &__button {
       display: flex;
-      gap: 25px;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #000;
+      font-size: 1.2rem;
+      padding: 20px 40px;
+      font-weight: bold;
+      background-color: var(--accentColor);
+      border-radius: 15px;
+      cursor: pointer;
     }
-  }
-
-  button {
-    display: flex;
-    background-color: var(--accentColor);
-    width: 312px;
-    border-radius: 15px;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: bold;
   }
 
   @media (min-width: 768px) {
