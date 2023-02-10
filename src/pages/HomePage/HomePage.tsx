@@ -14,9 +14,7 @@ const HomePage = (): JSX.Element => {
 
   return (
     <HomePageStyled>
-      <div className="title">
-        <h1>All Photos</h1>
-      </div>
+      <h1 className="title">All Photos</h1>
       <Filter />
       <PhotoList />
       <div>

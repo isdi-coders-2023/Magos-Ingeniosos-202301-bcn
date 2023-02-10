@@ -5,6 +5,7 @@ import PhotoListStyled from "./PhotoListStyled";
 
 const PhotoList = (): JSX.Element => {
   const { photos } = useContext(PhotosContext);
+  const defaultAlt = "magic themed photography from unsplash";
 
   return (
     <PhotoListStyled className="photo__list list">
@@ -12,7 +13,7 @@ const PhotoList = (): JSX.Element => {
         <li key={photo.id}>
           <Photo
             id={photo.id}
-            alt={photo.alt}
+            alt={photo.alt ? photo.alt : defaultAlt}
             url={photo.url}
             tags={photo.tags}
             photographer={photo.photographer}

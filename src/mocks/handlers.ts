@@ -2,7 +2,7 @@ import { rest } from "msw";
 import { PhotoDataList } from "../data/types";
 
 export const handlerSuccess = rest.get(
-  `https://api.unsplash.com/search/photos`,
+  `${process.env.REACT_APP_API_URL!}`,
   (_, res, ctx) =>
     res(
       ctx.status(200),
@@ -26,6 +26,6 @@ export const handlerSuccess = rest.get(
 );
 
 export const handlerError = rest.get(
-  `https://api.unsplash.com/search/photos`,
+  `${process.env.REACT_APP_API_URL!}`,
   (_, res, ctx) => res(ctx.status(500), ctx.json(null))
 );
