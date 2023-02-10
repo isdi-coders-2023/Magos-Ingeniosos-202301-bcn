@@ -13,7 +13,7 @@ const LoadingStyled = styled.div`
 
     &__icon {
       padding-left: 20px;
-      color: #eb7d00;
+      color: var(--accentColor);
       animation: castingWand 3s linear infinite;
     }
   }

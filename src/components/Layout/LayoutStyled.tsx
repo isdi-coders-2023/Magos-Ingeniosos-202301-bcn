@@ -14,7 +14,7 @@ const LayoutStyled = styled.div`
 
   .main-title {
     font-size: 2.5rem;
-    font-family: "Cinzel Decorative";
+    font-family: var(--displayFont);
   }
 
   @media (min-width: 768px) {
