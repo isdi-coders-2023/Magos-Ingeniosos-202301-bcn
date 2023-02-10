@@ -9,7 +9,7 @@ const LayoutStyled = styled.div`
     background-color: inherit;
     border-bottom: 3px solid var(--accentColor);
     flex-direction: column;
-    padding: 50px;
+    padding: 0 50px;
   }
 
   .main-title {

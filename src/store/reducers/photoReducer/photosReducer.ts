@@ -1,9 +1,9 @@
-import { PhotosStructure } from "../../data/types";
+import { PhotosStructure } from "../../../data/types";
 import {
   LoadPhotosAction,
   PhotoActionType,
   PhotosAction,
-} from "../actions/types";
+} from "../../actions/types";
 
 const photosReducer = (
   currentPhotos: PhotosStructure,
