@@ -6,14 +6,16 @@ const LoadingStyled = styled.div`
   align-items: center;
   min-height: 100vh;
 
-  .loading__text {
-    font-size: 3rem;
-  }
+  .loading {
+    &__text {
+      font-size: 3rem;
+    }
 
-  .loading__icon {
-    padding-left: 20px;
-    color: #eb7d00;
-    animation: castingWand 3s linear infinite;
+    &__icon {
+      padding-left: 20px;
+      color: #eb7d00;
+      animation: castingWand 3s linear infinite;
+    }
   }
 
   @keyframes castingWand {
