@@ -18,7 +18,9 @@ describe("Given a Filter Component", () => {
 
       render(<Filter />);
 
-      const castleFilterButton = screen.getByLabelText(labelText);
+      const castleFilterButton = screen.getByRole("button", {
+        name: labelText,
+      });
 
       expect(castleFilterButton).toBeInTheDocument();
     });
@@ -28,7 +30,9 @@ describe("Given a Filter Component", () => {
 
       render(<Filter />);
 
-      const dragonFilterButton = screen.getByLabelText(labelText);
+      const dragonFilterButton = screen.getByRole("button", {
+        name: labelText,
+      });
 
       expect(dragonFilterButton).toBeInTheDocument();
     });
@@ -38,7 +42,9 @@ describe("Given a Filter Component", () => {
 
       render(<Filter />);
 
-      const spellsFilterButton = screen.getByLabelText(labelText);
+      const spellsFilterButton = screen.getByRole("button", {
+        name: labelText,
+      });
 
       expect(spellsFilterButton).toBeInTheDocument();
     });

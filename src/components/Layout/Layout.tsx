@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import GlobalStyles from "../../GlobalStyles";
 import MainNavigation from "../MainNavigation/MainNavigation";
 import LayoutStyled from "./LayoutStyled";
 
@@ -11,7 +10,6 @@ const Layout = (): JSX.Element => {
         <MainNavigation />
       </header>
       <main>
-        <GlobalStyles />
         <Outlet />
       </main>
     </LayoutStyled>
