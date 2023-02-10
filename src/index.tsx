@@ -5,12 +5,19 @@ import App from "./App";
 import GlobalStyles from "./GlobalStyles";
 import PhotosContextProvider from "./store/contexts/PhotosContextProvider";
 import HomePage from "./pages/HomePage/HomePage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{ path: "/", element: <HomePage /> }],
+    children: [
+      { path: "/", element: <HomePage /> },
+      {
+        path: "details",
+        element: <DetailsPage />,
+      },
+    ],
   },
 ]);
 

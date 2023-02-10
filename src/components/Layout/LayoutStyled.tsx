@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const LayoutStyled = styled.div`
   .main-header {
-    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;

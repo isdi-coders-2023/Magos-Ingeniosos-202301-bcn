@@ -32,7 +32,7 @@ const NotFoundPageStyled = styled.div`
       justify-content: center;
       align-items: center;
       color: #000;
-      font-size: 1rem;
+      font-size: 1.2rem;
       padding: 20px 40px;
       font-weight: bold;
       background-color: var(--accentColor);

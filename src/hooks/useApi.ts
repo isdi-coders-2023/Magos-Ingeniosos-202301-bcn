@@ -16,10 +16,12 @@ const useApi = () => {
 
       const photos = photoApi.results.map((result) => ({
         id: result.id,
+        description: result.description,
         alt: result.alt_description,
         url: result.urls.small,
         tags: result.tags.map((tag) => `#${tag.title}`),
         photographer: result.user.name,
+        username: result.user.username,
       }));
 
       dispatch(loadPhotosActionCreator(photos));

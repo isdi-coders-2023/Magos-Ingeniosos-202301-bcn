@@ -7,10 +7,12 @@ describe("Given a Component", () => {
       render(
         <Photo
           id=""
+          description=""
           alt=""
           url=""
           tags={[]}
           photographer={"Melquiades Heeringa"}
+          username=""
         />
       );
 

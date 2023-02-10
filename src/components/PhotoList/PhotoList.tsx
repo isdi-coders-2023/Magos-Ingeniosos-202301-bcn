@@ -13,10 +13,12 @@ const PhotoList = (): JSX.Element => {
         <li key={photo.id}>
           <Photo
             id={photo.id}
+            description={photo.description}
             alt={photo.alt ? photo.alt : defaultAlt}
             url={photo.url}
             tags={photo.tags}
             photographer={photo.photographer}
+            username={photo.username}
           />
         </li>
       ))}

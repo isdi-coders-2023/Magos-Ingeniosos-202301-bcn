@@ -1,9 +1,33 @@
 import { loadPhotosActionCreator } from "./loadPhotosActionCreator";
 
 const photos = [
-  { id: "", alt: "", url: "", tags: [], photographer: "" },
-  { id: "", alt: "", url: "", tags: [], photographer: "" },
-  { id: "", alt: "", url: "", tags: [], photographer: "" },
+  {
+    id: "",
+    description: "",
+    alt: "",
+    url: "",
+    tags: [],
+    photographer: "",
+    username: "",
+  },
+  {
+    id: "",
+    description: "",
+    alt: "",
+    url: "",
+    tags: [],
+    photographer: "",
+    username: "",
+  },
+  {
+    id: "",
+    description: "",
+    alt: "",
+    url: "",
+    tags: [],
+    photographer: "",
+    username: "",
+  },
 ];
 
 describe("Given a loadPhotosActionCreator function", () => {
