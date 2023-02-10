@@ -11,6 +11,7 @@ describe("Given a Component", () => {
           url=""
           tags={[]}
           photographer={"Melquiades Heeringa"}
+          username=""
         />
       );
 

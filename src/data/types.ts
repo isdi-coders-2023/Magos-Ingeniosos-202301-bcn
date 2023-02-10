@@ -10,6 +10,7 @@ interface PhotoData {
   };
   tags: PhotoTag[];
   user: {
+    username: string;
     name: string;
   };
 }
@@ -23,6 +24,7 @@ export interface PhotoStructure {
   alt: string;
   url: string;
   tags: string[];
+  username: string;
   photographer: string;
 }
 

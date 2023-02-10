@@ -16,6 +16,7 @@ export const handlerSuccess = rest.get(
             },
             tags: [{ title: "" }, { title: "" }, { title: "" }],
             user: {
+              username: "",
               name: "",
             },
           },

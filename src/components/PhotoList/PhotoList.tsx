@@ -16,6 +16,7 @@ const PhotoList = (): JSX.Element => {
             url={photo.url}
             tags={photo.tags}
             photographer={photo.photographer}
+            username={photo.username}
           />
         </li>
       ))}

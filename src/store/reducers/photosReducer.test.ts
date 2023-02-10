@@ -3,9 +3,9 @@ import { PhotoActionType } from "../actions/types";
 import photosReducer from "../reducers/photosReducer";
 
 const photos = [
-  { id: "", alt: "", url: "", tags: [], photographer: "" },
-  { id: "", alt: "", url: "", tags: [], photographer: "" },
-  { id: "", alt: "", url: "", tags: [], photographer: "" },
+  { id: "", alt: "", url: "", tags: [], photographer: "", username: "" },
+  { id: "", alt: "", url: "", tags: [], photographer: "", username: "" },
+  { id: "", alt: "", url: "", tags: [], photographer: "", username: "" },
 ];
 describe("Given a photosReducer function", () => {
   describe("When it receives an array of photos and no action", () => {

@@ -20,6 +20,7 @@ const useApi = () => {
         url: result.urls.small,
         tags: result.tags.map((tag) => `#${tag.title}`),
         photographer: result.user.name,
+        username: result.user.username,
       }));
 
       dispatch(loadPhotosActionCreator(photos));
