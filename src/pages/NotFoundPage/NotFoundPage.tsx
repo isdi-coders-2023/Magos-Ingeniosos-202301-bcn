@@ -11,7 +11,7 @@ const NotFoundPage = () => {
       <span className="not-found__message">
         Our Wizards are out of mana right now, sorry.
       </span>
-      <a className="not-found__button" href="/">
+      <a role="button" className="not-found__button" href="/">
         Back to Home
       </a>
     </NotFoundPageStyled>
