@@ -7,6 +7,8 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --primaryColor: #2b2f3b;
     --accentColor: #eb7d00;
+    --primaryFont: "Raleway", sans-serif;
+    --displayFont: "Cinzel Decorative", fantasy;
   }
 
   *, ::before, ::after {
@@ -15,13 +17,13 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     margin: 0;
-    font-family: "Raleway", sans-serif;
+    font-family: var(--primaryFont);
     font-size: 1.25rem;
     background-color: var(--primaryColor);
     color:#fff
   }
 
-  h2 {
+  h1, h2 {
     margin: 0;
   }
 
