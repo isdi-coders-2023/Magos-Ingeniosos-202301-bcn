@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 const LayoutStyled = styled.div`
   .main-header {
-    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: inherit;
     border-bottom: 3px solid var(--accentColor);
     flex-direction: column;
-    padding: 50px;
+    padding: 25px;
   }
 
   .main-title {
