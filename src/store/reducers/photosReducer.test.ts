@@ -1,5 +1,5 @@
-import { loadPhotosActionCreator } from "../actions/loadPhotosActionCreator";
-import { PhotoActionType } from "../actions/types";
+import { loadPhotosActionCreator } from "../actions/photos/loadPhotosActionCreator";
+import { PhotoActionType } from "../actions/photos/types";
 import photosReducer from "../reducers/photosReducer";
 
 const photos = [

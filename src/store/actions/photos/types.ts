@@ -1,4 +1,4 @@
-import { PhotosStructure } from "../../data/types";
+import { PhotosStructure } from "../../../data/types";
 
 export enum PhotoActionType {
   loadPhotos,
