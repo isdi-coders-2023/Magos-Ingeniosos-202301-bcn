@@ -6,6 +6,7 @@ const PhotoListStyled = styled.ul`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 50px 0;
 
   @media (min-width: 768px) {
     gap: 72px;

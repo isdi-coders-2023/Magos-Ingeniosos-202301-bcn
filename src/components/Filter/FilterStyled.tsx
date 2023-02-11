@@ -6,16 +6,21 @@ const FilterStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 
     &__button {
       display: flex;
-      background-color: var(--accentColor);
-      width: 80px;
-      border-radius: 15px;
-      gap: 35px;
       justify-content: center;
-      height: 35px;
       align-items: center;
+      background-color: var(--accentColor);
+      padding: 15px 30px;
+      border-radius: 15px;
+
+      cursor: pointer;
+
+      &--show-all {
+        width: 310px;
+      }
     }
   }
 
