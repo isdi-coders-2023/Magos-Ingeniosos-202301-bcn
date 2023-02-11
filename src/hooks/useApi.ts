@@ -5,7 +5,7 @@ import {
   setIsLoadingActionCreator,
   unsetIsLoadingActionCreator,
 } from "../store/actions/ui/uiActionCreator";
-import PhotosContext from "../store/contexts/PhotosContext";
+import PhotosContext from "../store/contexts/photos/PhotosContext";
 import UiContext from "../store/contexts/ui/UiContext";
 
 const useApi = (keywords: string) => {

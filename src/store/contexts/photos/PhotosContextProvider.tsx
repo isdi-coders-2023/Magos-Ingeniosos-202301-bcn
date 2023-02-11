@@ -1,5 +1,5 @@
 import { useMemo, useReducer } from "react";
-import photosReducer from "../reducers/photos/photosReducer";
+import photosReducer from "../../reducers/photos/photosReducer";
 import PhotosContext from "./PhotosContext";
 
 interface PhotosContextProviderProps {
