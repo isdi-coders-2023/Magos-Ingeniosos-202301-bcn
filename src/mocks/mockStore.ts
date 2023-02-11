@@ -64,7 +64,7 @@ export const isLoading = true;
 export const mockUiStore = { dispatch: dispatchUi, isLoading };
 export const mockUiDispatch = jest.spyOn(mockUiStore, "dispatch");
 
-export interface mockUiAction {
+export interface MockUiAction {
   type: UiActionType;
 }
 
