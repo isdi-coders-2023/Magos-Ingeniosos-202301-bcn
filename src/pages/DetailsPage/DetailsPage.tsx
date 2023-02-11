@@ -4,7 +4,7 @@ import PhotosContext from "../../store/contexts/PhotosContext";
 import DetailsPageStyled from "./DetailsPageStyled";
 
 const DetailsPage = (): JSX.Element => {
-  const { getPhotos } = useApi();
+  const { getPhotos } = useApi("magic+dragon+wizard+castle+spells");
 
   useEffect(() => {
     getPhotos();
