@@ -7,11 +7,9 @@ interface FilterFunctions {
   filterSpellsPhotos: () => {};
   deactivateFilter: () => {};
 }
-
 interface FilterProps {
   filterFunctions: FilterFunctions;
 }
-
 const Filter = ({ filterFunctions }: FilterProps): JSX.Element => {
   return (
     <FilterStyled>
