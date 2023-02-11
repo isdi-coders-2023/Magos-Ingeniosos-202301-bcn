@@ -34,9 +34,11 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
         wrapper: ({ children }) => {
           return (
-            <MockContextProvider mockStore={storePhotos}>
-              {children}
-            </MockContextProvider>
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
           );
         },
       });
@@ -81,9 +83,11 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
         wrapper: ({ children }) => {
           return (
-            <MockContextProvider mockStore={storePhotos}>
-              {children}
-            </MockContextProvider>
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
           );
         },
       });
