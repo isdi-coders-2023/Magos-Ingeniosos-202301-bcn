@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import GlobalStyles from "../../GlobalStyles";
 import UiContext from "../../store/contexts/ui/UiContext";
 import Loading from "../Loading/Loading";
 import MainNavigation from "../MainNavigation/MainNavigation";
@@ -16,7 +15,6 @@ const Layout = (): JSX.Element => {
       </header>
       <main>
         {isLoading && <Loading />}
-        <GlobalStyles />
         <Outlet />
       </main>
     </LayoutStyled>

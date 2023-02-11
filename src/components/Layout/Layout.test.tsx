@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import GlobalStyles from "../../GlobalStyles";
 import UiContextProvider from "../../store/contexts/ui/UiContextProvider";
 
 import Layout from "./Layout";
@@ -11,6 +12,7 @@ describe("Given a Layout component", () => {
 
       render(
         <UiContextProvider>
+          <GlobalStyles />
           <Layout />
         </UiContextProvider>,
         { wrapper: BrowserRouter }
