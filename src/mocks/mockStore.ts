@@ -6,7 +6,7 @@ export const photos: PhotosStructure = [
   {
     id: "",
     description: "",
-    alt: "",
+    alt: "alternative text",
     url: "",
     tags: [],
     photographer: "",
