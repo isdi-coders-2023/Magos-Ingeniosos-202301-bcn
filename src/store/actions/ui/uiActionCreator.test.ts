@@ -1,4 +1,7 @@
-import { setIsLoadingActionCreator } from "./uiActionCreator";
+import {
+  setIsLoadingActionCreator,
+  unsetIsLoadingActionCreator,
+} from "./uiActionCreator";
 
 describe("Given the function setIsLoadingActionCreator", () => {
   describe("When invoked", () => {
@@ -7,5 +10,11 @@ describe("Given the function setIsLoadingActionCreator", () => {
 
       expect(result).toHaveProperty("type");
     });
+  });
+
+  test("Then it should return an action object with property 'type'", () => {
+    const result = unsetIsLoadingActionCreator();
+
+    expect(result).toHaveProperty("type");
   });
 });

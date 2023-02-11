@@ -8,6 +8,6 @@ export const setIsLoadingActionCreator = (): SetIsLoadingAction => ({
   type: UiActionType.setIsLoading,
 });
 
-export const UnsetIsLoadingActionCreator = (): UnsetIsLoadingAction => ({
+export const unsetIsLoadingActionCreator = (): UnsetIsLoadingAction => ({
   type: UiActionType.unsetIsLoading,
 });
