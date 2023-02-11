@@ -5,6 +5,7 @@ const MainNavigationStyled = styled.nav`
     display: flex;
     flex-direction: row;
     gap: 50px;
+    margin: 0;
   }
 
   .active {
