@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import { PhotoDataList } from "../data/types";
+import { PhotoDataList, PhotosStructure } from "../data/types";
 import { loadPhotosActionCreator } from "../store/actions/photos/loadPhotosActionCreator";
 import {
   setIsLoadingActionCreator,
@@ -9,7 +9,7 @@ import PhotosContext from "../store/contexts/photos/PhotosContext";
 import UiContext from "../store/contexts/ui/UiContext";
 
 const useApi = (keywords: string) => {
-  const { dispatch } = useContext(PhotosContext);
+  const { dispatch: photoDispatch } = useContext(PhotosContext);
   const { dispatch: uiDispatch } = useContext(UiContext);
 
   const getPhotos = useCallback(async () => {
@@ -24,7 +24,7 @@ const useApi = (keywords: string) => {
 
       uiDispatch(unsetIsLoadingActionCreator());
 
-      const photos = photoApi.results.map((result) => ({
+      const photos: PhotosStructure = photoApi.results.map((result) => ({
         id: result.id,
         description: result.description,
         alt: result.alt_description,
@@ -34,11 +34,11 @@ const useApi = (keywords: string) => {
         username: result.user.username,
       }));
 
-      dispatch(loadPhotosActionCreator(photos));
+      photoDispatch(loadPhotosActionCreator(photos));
     } catch (error) {
       return (error as Error).message;
     }
-  }, [dispatch, uiDispatch, keywords]);
+  }, [photoDispatch, uiDispatch, keywords]);
 
   return { getPhotos };
 };

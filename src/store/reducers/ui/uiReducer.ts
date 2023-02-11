@@ -13,6 +13,7 @@ const uiReducer = (currentIsLoading: boolean, action: UiAction) => {
     default:
       newIsLoading = currentIsLoading;
   }
+
   return newIsLoading;
 };
 
