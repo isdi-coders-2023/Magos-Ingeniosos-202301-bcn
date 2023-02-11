@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { PhotosStructure } from "../../data/types";
-import { PhotosAction } from "../actions/photos/types";
+import { PhotosStructure } from "../../../data/types";
+import { PhotosAction } from "../../actions/photos/types";
 
 interface PhotosContextStructure {
   photos: PhotosStructure;

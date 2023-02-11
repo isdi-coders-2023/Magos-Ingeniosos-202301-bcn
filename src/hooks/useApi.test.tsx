@@ -11,7 +11,7 @@ import {
   mockUiUnsetIsLoadingAction,
 } from "../mocks/mockStore";
 import { server } from "../mocks/server";
-import PhotosContext from "../store/contexts/PhotosContext";
+import PhotosContext from "../store/contexts/photos/PhotosContext";
 import UiContext from "../store/contexts/ui/UiContext";
 import useApi from "./useApi";
 

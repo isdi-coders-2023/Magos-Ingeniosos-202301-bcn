@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import useApi from "../../hooks/useApi";
-import PhotosContext from "../../store/contexts/PhotosContext";
+import PhotosContext from "../../store/contexts/photos/PhotosContext";
 import DetailsPageStyled from "./DetailsPageStyled";
 
 const DetailsPage = (): JSX.Element => {

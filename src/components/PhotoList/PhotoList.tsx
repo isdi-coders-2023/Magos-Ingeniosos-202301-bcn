@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PhotosContext from "../../store/contexts/PhotosContext";
+import PhotosContext from "../../store/contexts/photos/PhotosContext";
 import Photo from "../Photo/Photo";
 import PhotoListStyled from "./PhotoListStyled";
 

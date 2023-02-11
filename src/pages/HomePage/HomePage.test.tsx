@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import PhotosContextProvider from "../../store/contexts/PhotosContextProvider";
+import PhotosContextProvider from "../../store/contexts/photos/PhotosContextProvider";
 import HomePage from "./HomePage";
 
 describe("Given a HomePage Component", () => {
