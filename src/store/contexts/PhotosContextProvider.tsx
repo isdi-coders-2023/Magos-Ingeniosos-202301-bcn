@@ -11,6 +11,7 @@ const PhotosContextProvider = ({
 }: PhotosContextProviderProps): JSX.Element => {
   const [photos, dispatch] = useReducer(photosReducer, []);
   const photosValue = useMemo(() => ({ photos, dispatch }), [photos]);
+
   return (
     <PhotosContext.Provider value={photosValue}>
       {children}

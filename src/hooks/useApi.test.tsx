@@ -16,7 +16,7 @@ describe("Given a useApi function", () => {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi(), {
+      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
         wrapper: ({ children }) => {
           return (
             <MockContextProvider mockStore={store}>
@@ -40,7 +40,7 @@ describe("Given a useApi function", () => {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi(), {
+      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
         wrapper: ({ children }) => {
           return (
             <MockContextProvider mockStore={store}>
