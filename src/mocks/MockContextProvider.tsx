@@ -1,5 +1,7 @@
 import { PhotosStructure } from "../data/types";
 import PhotosContext from "../store/contexts/PhotosContext";
+import UiContext from "../store/contexts/ui/UiContext";
+import { mockUiStore } from "./mockStore";
 
 interface StoreStructure {
   dispatch: React.Dispatch<any>;
@@ -15,9 +17,11 @@ const MockContextProvider = ({
   mockStore,
 }: MockContextProviderProps): JSX.Element => {
   return (
-    <PhotosContext.Provider value={mockStore}>
-      {children}
-    </PhotosContext.Provider>
+    <UiContext.Provider value={mockUiStore}>
+      <PhotosContext.Provider value={mockStore}>
+        {children}
+      </PhotosContext.Provider>
+    </UiContext.Provider>
   );
 };
 

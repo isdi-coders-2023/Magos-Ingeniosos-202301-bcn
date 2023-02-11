@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import MockContextProvider from "../../mocks/MockContextProvider";
-import { mockStore, photos } from "../../mocks/mockStore";
+import { mockStorePhotos, photos } from "../../mocks/mockStore";
 import PhotoList from "./PhotoList";
 
-const store = mockStore;
+const store = mockStorePhotos;
 
 describe("Given a PhotoList component", () => {
   describe("When rendered", () => {

@@ -1,13 +1,13 @@
 import DetailsPage from "./DetailsPage";
 import { render, screen } from "@testing-library/react";
 import MockContextProvider from "../../mocks/MockContextProvider";
-import { mockStore } from "../../mocks/mockStore";
+import { mockStorePhotos } from "../../mocks/mockStore";
 
 describe("Given a DetailsPage Component", () => {
   describe("When rendered", () => {
     test("Then it should show alt text", () => {
       render(
-        <MockContextProvider mockStore={mockStore}>
+        <MockContextProvider mockStore={mockStorePhotos}>
           <DetailsPage />
         </MockContextProvider>
       );

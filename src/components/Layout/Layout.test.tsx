@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import UiContextProvider from "../../store/contexts/ui/UiContextProvider";
 
 import Layout from "./Layout";
 
@@ -8,7 +9,12 @@ describe("Given a Layout component", () => {
     test("Then it should show text 'Wiztagram' in the header", () => {
       const expectedText = "Wiztagram";
 
-      render(<Layout />, { wrapper: BrowserRouter });
+      render(
+        <UiContextProvider>
+          <Layout />
+        </UiContextProvider>,
+        { wrapper: BrowserRouter }
+      );
 
       const text = screen.getByText(expectedText);
 

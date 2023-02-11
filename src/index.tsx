@@ -6,6 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import PhotosContextProvider from "./store/contexts/PhotosContextProvider";
 import HomePage from "./pages/HomePage/HomePage";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
+import UiContextProvider from "./store/contexts/ui/UiContextProvider";
 
 const router = createBrowserRouter([
   {
@@ -26,9 +27,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <PhotosContextProvider>
-      <GlobalStyles />
-      <RouterProvider router={router} />
-    </PhotosContextProvider>
+    <UiContextProvider>
+      <PhotosContextProvider>
+        <GlobalStyles />
+        <RouterProvider router={router} />
+      </PhotosContextProvider>
+    </UiContextProvider>
   </React.StrictMode>
 );

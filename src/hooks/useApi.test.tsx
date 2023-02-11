@@ -1,13 +1,28 @@
 import { renderHook } from "@testing-library/react";
 import { handlerError } from "../mocks/handlers";
 import MockContextProvider from "../mocks/MockContextProvider";
-import { mockStore, mockDispatch, mockAction } from "../mocks/mockStore";
+import {
+  mockStorePhotos,
+  mockDispatchPhotos,
+  mockActionPhotos,
+  mockUiDispatch,
+  mockUiStore,
+  mockUiSetIsLoadingAction,
+  mockUiUnsetIsLoadingAction,
+} from "../mocks/mockStore";
 import { server } from "../mocks/server";
+import PhotosContext from "../store/contexts/PhotosContext";
+import UiContext from "../store/contexts/ui/UiContext";
 import useApi from "./useApi";
 
-const dispatch = mockDispatch;
-const store = mockStore;
-const action = mockAction;
+const dispatchPhotos = mockDispatchPhotos;
+const storePhotos = mockStorePhotos;
+const actionPhotos = mockActionPhotos;
+
+const dispatchUi = mockUiDispatch;
+const storeUi = mockUiStore;
+const actionUiSetIsLoading = mockUiSetIsLoadingAction;
+const actionUiUnsetIsLoading = mockUiUnsetIsLoadingAction;
 
 describe("Given a useApi function", () => {
   describe("When getPhotos is called with a valid action", () => {
@@ -19,16 +34,41 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
         wrapper: ({ children }) => {
           return (
-            <MockContextProvider mockStore={store}>
-              {children}
-            </MockContextProvider>
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
           );
         },
       });
 
       await getPhotos();
 
-      expect(dispatch).toHaveBeenCalledWith(action);
+      expect(dispatchPhotos).toHaveBeenCalledWith(actionPhotos);
+    });
+
+    test("Then dispatchUi should be invoked with the action actionUiSetIsLoading and actionUiUnsetIsLoading", async () => {
+      const {
+        result: {
+          current: { getPhotos },
+        },
+      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+        wrapper: ({ children }) => {
+          return (
+            <UiContext.Provider value={storeUi}>
+              <PhotosContext.Provider value={storePhotos}>
+                {children}
+              </PhotosContext.Provider>
+            </UiContext.Provider>
+          );
+        },
+      });
+
+      await getPhotos();
+
+      expect(dispatchUi).toHaveBeenCalledWith(actionUiSetIsLoading);
+      expect(dispatchUi).toHaveBeenCalledWith(actionUiUnsetIsLoading);
     });
   });
 
@@ -43,16 +83,18 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
         wrapper: ({ children }) => {
           return (
-            <MockContextProvider mockStore={store}>
-              {children}
-            </MockContextProvider>
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
           );
         },
       });
 
       await getPhotos();
 
-      expect(dispatch).not.toHaveBeenCalled();
+      expect(dispatchPhotos).not.toHaveBeenCalled();
     });
   });
 });

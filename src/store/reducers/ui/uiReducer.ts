@@ -1,7 +1,7 @@
 import { UiAction, UiActionType } from "../../actions/ui/types";
 
 const uiReducer = (currentIsLoading: boolean, action: UiAction) => {
-  let newIsLoading;
+  let newIsLoading: boolean;
 
   switch (action.type) {
     case UiActionType.setIsLoading:
