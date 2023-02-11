@@ -119,7 +119,7 @@ describe("Given a Filter Component", () => {
   });
 
   describe("When the user clicks on the 'Show all' button", () => {
-    test("Then the filterSpellsPhotos function should be invoked", () => {
+    test("Then the deactivateFilter function should be invoked", () => {
       const labelText = /show all/i;
 
       render(<Filter filterFunctions={filterFunctions} />);

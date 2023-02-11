@@ -5,7 +5,7 @@ const PhotoStyled = styled.article`
   flex-direction: column;
   min-height: 355px;
   width: 312px;
-  border: 1px solid #fff;
+  box-shadow: 0px 0px 10px 3px rgba(94, 94, 94, 1);
   border-radius: 15px;
 
   .photo {
