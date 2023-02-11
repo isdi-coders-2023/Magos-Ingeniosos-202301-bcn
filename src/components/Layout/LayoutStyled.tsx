@@ -8,7 +8,8 @@ const LayoutStyled = styled.div`
     background-color: inherit;
     border-bottom: 3px solid var(--accentColor);
     flex-direction: column;
-    padding: 0 50px;
+    padding: 25px 50px;
+    gap: 25px;
   }
 
   .main-title {
@@ -18,7 +19,6 @@ const LayoutStyled = styled.div`
 
   @media (min-width: 768px) {
     .main-header {
-      height: 95px;
       justify-content: space-between;
       flex-direction: row;
     }
