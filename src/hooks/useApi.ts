@@ -45,8 +45,8 @@ const useApi = (keywords: string) => {
 
   const getPhoto = useCallback(
     async (id: string) => {
-      const photoDetailUrl = `https://api.unsplash.com/photos/${id}?client_id=${process.env.REACT_APP_PHOTO_KEY}`;
       try {
+        const photoDetailUrl = `https://api.unsplash.com/photos/${id}?client_id=${process.env.REACT_APP_PHOTO_KEY}`;
         dispatchUi(setIsLoadingActionCreator());
 
         const result = await fetch(photoDetailUrl);
