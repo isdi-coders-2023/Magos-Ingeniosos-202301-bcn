@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import PhotosContextProvider from "../../store/contexts/photos/PhotosContextProvider";
 import HomePage from "./HomePage";
 
@@ -10,7 +11,8 @@ describe("Given a HomePage Component", () => {
       render(
         <PhotosContextProvider>
           <HomePage />
-        </PhotosContextProvider>
+        </PhotosContextProvider>,
+        { wrapper: BrowserRouter }
       );
       const heading = screen.getByRole("heading", { name: headingText });
 

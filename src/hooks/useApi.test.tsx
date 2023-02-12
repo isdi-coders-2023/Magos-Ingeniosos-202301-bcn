@@ -9,6 +9,8 @@ import {
   mockUiStore,
   mockUiSetIsLoadingAction,
   mockUiUnsetIsLoadingAction,
+  mockDispatchPhoto,
+  mockActionPhoto,
 } from "../mocks/mockStore";
 import { server } from "../mocks/server";
 import PhotosContext from "../store/contexts/photos/PhotosContext";
@@ -16,6 +18,7 @@ import UiContext from "../store/contexts/ui/UiContext";
 import useApi from "./useApi";
 
 const dispatchPhotos = mockDispatchPhotos;
+const dispatchPhoto = mockDispatchPhoto;
 const storePhotos = mockStorePhotos;
 const actionPhotos = mockActionPhotos;
 
@@ -26,12 +29,12 @@ const actionUiUnsetIsLoading = mockUiUnsetIsLoadingAction;
 
 describe("Given a useApi function", () => {
   describe("When getPhotos is called with a valid action", () => {
-    test("Then dispatch should be invoked with that action", async () => {
+    test("Then dispatchPhotos should be invoked with that action", async () => {
       const {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+      } = renderHook(() => useApi(""), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -53,7 +56,7 @@ describe("Given a useApi function", () => {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+      } = renderHook(() => useApi(""), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -69,6 +72,31 @@ describe("Given a useApi function", () => {
 
       expect(dispatchUi).toHaveBeenCalledWith(actionUiSetIsLoading);
       expect(dispatchUi).toHaveBeenCalledWith(actionUiUnsetIsLoading);
+    });
+  });
+
+  describe("When getPhoto is called with a valid action", () => {
+    test("Then dispatchPhoto should be invoked with that action", async () => {
+      const {
+        result: {
+          current: { getPhoto },
+        },
+      } = renderHook(() => useApi(""), {
+        wrapper: ({ children }) => {
+          return (
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
+          );
+        },
+      });
+      const id = "";
+
+      await getPhoto(id);
+
+      expect(dispatchPhoto).toHaveBeenCalledWith(mockActionPhoto);
     });
   });
 
