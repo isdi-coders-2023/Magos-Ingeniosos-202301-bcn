@@ -20,7 +20,7 @@ const useApi = (keywords: string) => {
       dispatchUi(setIsLoadingActionCreator());
 
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}?page=1&per_page=30&query=${keywords}&client_id=${process.env.REACT_APP_PHOTO_KEY}`
+        `${process.env.REACT_APP_API_URL}?page=1&per_page=9&query=${keywords}&client_id=${process.env.REACT_APP_PHOTO_KEY}`
       );
 
       const photosApi = (await response.json()) as PhotoDataList;
