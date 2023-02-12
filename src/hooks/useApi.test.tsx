@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import { handlerError } from "../mocks/handlers";
+import { handlerDetailsError, handlerListError } from "../mocks/handlers";
 import MockContextProvider from "../mocks/MockContextProvider";
 import {
   mockStorePhotos,
@@ -101,9 +101,8 @@ describe("Given a useApi function", () => {
   });
 
   describe("When an error occurs in the getPhotos function", () => {
+    beforeEach(() => server.resetHandlers(handlerListError));
     test("Then dispatchPhotos should not be invoked", async () => {
-      server.use(handlerError);
-
       const {
         result: {
           current: { getPhotos },
@@ -127,9 +126,8 @@ describe("Given a useApi function", () => {
   });
 
   describe("When an error occurs in the getPhoto function", () => {
-    test("Then dispatchPhotos should not be invoked", async () => {
-      server.use(handlerError);
-
+    beforeEach(() => server.resetHandlers(handlerDetailsError));
+    test("Then dispatchPhoto should not be invoked", async () => {
       const {
         result: {
           current: { getPhotos },

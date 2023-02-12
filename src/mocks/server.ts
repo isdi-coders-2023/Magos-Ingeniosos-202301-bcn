@@ -1,12 +1,14 @@
 import { setupServer } from "msw/node";
 import {
+  handlerDetailsError,
   handlerDetailsSuccess,
-  handlerError,
-  handlerSuccess,
+  handlerListError,
+  handlerListSuccess,
 } from "./handlers";
 
 export const server = setupServer(
-  handlerSuccess,
+  handlerListSuccess,
   handlerDetailsSuccess,
-  handlerError
+  handlerListError,
+  handlerDetailsError
 );
