@@ -31,6 +31,8 @@ const DetailsPageStyled = styled.div`
     &__tags {
       align-self: flex-end;
       color: var(--accentColor);
+      font-style: italic;
+      font-size: 1rem;
     }
 
     &__description {

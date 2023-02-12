@@ -2,7 +2,7 @@ interface PhotoTag {
   title: string;
 }
 
-interface PhotoData {
+export interface PhotoData {
   id: string;
   description: string;
   alt_description: string;

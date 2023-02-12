@@ -1,9 +1,11 @@
 import { PhotosStructure } from "../../../data/types";
 import { LoadPhotosAction, PhotoActionType } from "./types";
 
-export const loadPhotosActionCreator = (
+const loadPhotosActionCreator = (
   photos: PhotosStructure
 ): LoadPhotosAction => ({
   type: PhotoActionType.loadPhotos,
   payload: photos,
 });
+
+export default loadPhotosActionCreator;

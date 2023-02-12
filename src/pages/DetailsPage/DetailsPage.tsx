@@ -1,43 +1,36 @@
 import { useContext, useEffect } from "react";
-import Loading from "../../components/Loading/Loading";
+import { useParams } from "react-router-dom";
 import useApi from "../../hooks/useApi";
 import PhotosContext from "../../store/contexts/photos/PhotosContext";
-import UiContext from "../../store/contexts/ui/UiContext";
 import DetailsPageStyled from "./DetailsPageStyled";
 
 const DetailsPage = (): JSX.Element => {
-  const { getPhotos } = useApi("magic+dragon+wizard+castle+spells");
+  const { getPhoto } = useApi("");
+  let { id } = useParams();
 
   useEffect(() => {
-    getPhotos();
-  }, [getPhotos]);
+    getPhoto(id!);
+  }, [getPhoto, id]);
 
-  const { photos } = useContext(PhotosContext);
-  const { isLoading } = useContext(UiContext);
+  const { photo } = useContext(PhotosContext);
 
   return (
     <>
-      {isLoading && <Loading />}
       <DetailsPageStyled className="details__styled">
         <div className="details__container">
           <img
             className="details__image"
-            src={photos[0].url}
-            alt={photos[0].alt}
+            src={photo.url}
+            alt={photo.alt}
             width="312"
             height="224"
           />
-          <h2 className="details__photographer">{photos[0].photographer}</h2>
-          <span className="details__tags">{photos[0].tags}</span>
-          <p className="details__description">
-            "Where there's smoke, there's probably a cool background. At least,
-            that's what some of Unsplash's professional community of
-            photographers thought. Now, you can choose from a huge collection of
-            free smoke backgrounds. Your welcome!",
-          </p>
+          <h2 className="details__photographer">{photo.photographer}</h2>
+          <span className="details__tags">{photo.tags.join(" ")}</span>
+          <p className="details__description">{photo.description}</p>
           <span>
             Username:
-            <span className="details__username">{photos[0].username}</span>
+            <span className="details__username">{photo.username}</span>
           </span>
         </div>
         <button className="details__button">Back to list</button>

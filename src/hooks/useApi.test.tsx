@@ -9,6 +9,8 @@ import {
   mockUiStore,
   mockUiSetIsLoadingAction,
   mockUiUnsetIsLoadingAction,
+  mockDispatchPhoto,
+  mockActionPhoto,
 } from "../mocks/mockStore";
 import { server } from "../mocks/server";
 import PhotosContext from "../store/contexts/photos/PhotosContext";
@@ -16,6 +18,7 @@ import UiContext from "../store/contexts/ui/UiContext";
 import useApi from "./useApi";
 
 const dispatchPhotos = mockDispatchPhotos;
+const dispatchPhoto = mockDispatchPhoto;
 const storePhotos = mockStorePhotos;
 const actionPhotos = mockActionPhotos;
 
@@ -26,12 +29,12 @@ const actionUiUnsetIsLoading = mockUiUnsetIsLoadingAction;
 
 describe("Given a useApi function", () => {
   describe("When getPhotos is called with a valid action", () => {
-    test("Then dispatch should be invoked with that action", async () => {
+    test("Then dispatchPhotos should be invoked with that action", async () => {
       const {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+      } = renderHook(() => useApi(""), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -53,7 +56,7 @@ describe("Given a useApi function", () => {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+      } = renderHook(() => useApi(""), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -72,15 +75,40 @@ describe("Given a useApi function", () => {
     });
   });
 
-  describe("When an error occurs", () => {
-    test("Then dispatch should not be invoked", async () => {
+  describe("When getPhoto is called with a valid action", () => {
+    test("Then dispatchPhoto should be invoked with that action", async () => {
+      const {
+        result: {
+          current: { getPhoto },
+        },
+      } = renderHook(() => useApi(""), {
+        wrapper: ({ children }) => {
+          return (
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
+          );
+        },
+      });
+      const id = "";
+
+      await getPhoto(id);
+
+      expect(dispatchPhoto).toHaveBeenCalledWith(mockActionPhoto);
+    });
+  });
+
+  describe("When an error occurs in the getPhotos function", () => {
+    test("Then dispatchPhotos should not be invoked", async () => {
       server.use(handlerError);
 
       const {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+      } = renderHook(() => useApi(""), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -95,6 +123,32 @@ describe("Given a useApi function", () => {
       await getPhotos();
 
       expect(dispatchPhotos).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("When an error occurs in the getPhoto function", () => {
+    test("Then dispatchPhotos should not be invoked", async () => {
+      server.use(handlerError);
+
+      const {
+        result: {
+          current: { getPhotos },
+        },
+      } = renderHook(() => useApi(""), {
+        wrapper: ({ children }) => {
+          return (
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
+          );
+        },
+      });
+
+      await getPhotos();
+
+      expect(dispatchPhoto).not.toHaveBeenCalled();
     });
   });
 });

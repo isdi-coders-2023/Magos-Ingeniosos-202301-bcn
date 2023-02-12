@@ -1,4 +1,4 @@
-import { PhotosStructure } from "../data/types";
+import { PhotosStructure, PhotoStructure } from "../data/types";
 import PhotosContext from "../store/contexts/photos/PhotosContext";
 import UiContext from "../store/contexts/ui/UiContext";
 import { mockUiStore } from "./mockStore";
@@ -6,6 +6,8 @@ import { mockUiStore } from "./mockStore";
 interface StoreStructure {
   dispatch: React.Dispatch<any>;
   photos: PhotosStructure;
+  dispatchDetail: React.Dispatch<any>;
+  photo: PhotoStructure;
 }
 interface MockContextProviderProps {
   children: JSX.Element | JSX.Element[];

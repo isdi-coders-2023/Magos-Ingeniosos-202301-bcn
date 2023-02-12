@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { PhotoDataList } from "../data/types";
+import { PhotoData, PhotoDataList } from "../data/types";
 
 export const handlerSuccess = rest.get(
   `${process.env.REACT_APP_API_URL!}`,
@@ -23,6 +23,27 @@ export const handlerSuccess = rest.get(
           },
         ],
       } satisfies PhotoDataList)
+    )
+);
+
+export const handlerDetailsSuccess = rest.get(
+  `https://api.unsplash.com/photos/`,
+  (_, res, ctx) =>
+    res(
+      ctx.status(200),
+      ctx.json({
+        id: "",
+        description: "",
+        alt_description: "",
+        urls: {
+          small: "",
+        },
+        tags: [{ title: "" }, { title: "" }, { title: "" }],
+        user: {
+          username: "",
+          name: "",
+        },
+      } satisfies PhotoData)
     )
 );
 
