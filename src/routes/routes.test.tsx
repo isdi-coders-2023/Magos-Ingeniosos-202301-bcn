@@ -4,11 +4,11 @@ import PhotosContextProvider from "../store/contexts/photos/PhotosContextProvide
 import UiContextProvider from "../store/contexts/ui/UiContextProvider";
 import { routes } from "./routes";
 
-describe("Given router element", () => {
-  describe("When rendered the DetailsPage", () => {
-    test("Then it should show the header banner", async () => {
+describe("Given the router element", () => {
+  describe("When the DetailsPage is rendered", () => {
+    test("Then it should show an image", async () => {
       const router = createMemoryRouter(routes, {
-        initialEntries: ["/details/"],
+        initialEntries: ["/details/:id"],
       });
 
       render(
