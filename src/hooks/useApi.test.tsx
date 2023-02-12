@@ -77,11 +77,12 @@ describe("Given a useApi function", () => {
 
   describe("When getPhoto is called with a valid action", () => {
     test("Then dispatchPhoto should be invoked with that action", async () => {
+      const id = "";
       const {
         result: {
           current: { getPhoto },
         },
-      } = renderHook(() => useApi(""), {
+      } = renderHook(() => useApi(id), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -92,7 +93,6 @@ describe("Given a useApi function", () => {
           );
         },
       });
-      const id = "";
 
       await getPhoto(id);
 
@@ -128,11 +128,12 @@ describe("Given a useApi function", () => {
   describe("When an error occurs in the getPhoto function", () => {
     beforeEach(() => server.resetHandlers(handlerDetailsError));
     test("Then dispatchPhoto should not be invoked", async () => {
+      const id = "";
       const {
         result: {
-          current: { getPhotos },
+          current: { getPhoto },
         },
-      } = renderHook(() => useApi(""), {
+      } = renderHook(() => useApi(id), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -144,7 +145,7 @@ describe("Given a useApi function", () => {
         },
       });
 
-      await getPhotos();
+      await getPhoto(id);
 
       expect(dispatchPhoto).not.toHaveBeenCalled();
     });
