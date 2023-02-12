@@ -1,7 +1,8 @@
-import { PhotosStructure } from "../../../data/types";
+import { PhotosStructure, PhotoStructure } from "../../../data/types";
 
 export enum PhotoActionType {
   loadPhotos,
+  loadPhoto,
   default,
 }
 
@@ -12,4 +13,8 @@ export interface PhotosAction {
 
 export interface LoadPhotosAction extends PhotosAction {
   payload: PhotosStructure;
+}
+
+export interface LoadPhotoAction extends PhotosAction {
+  payload: PhotoStructure;
 }
