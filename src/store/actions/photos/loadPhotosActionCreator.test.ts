@@ -1,4 +1,4 @@
-import { loadPhotosActionCreator } from "./loadPhotosActionCreator";
+import loadPhotosActionCreator from "./loadPhotosActionCreator";
 
 const photos = [
   {
