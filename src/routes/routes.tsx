@@ -3,18 +3,18 @@ import App from "../App";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import HomePage from "../pages/HomePage/HomePage";
 
-const router = createBrowserRouter([
+export const routes = [
   {
     path: "/",
     element: <App />,
     children: [
       { path: "/", element: <HomePage /> },
       {
-        path: "details",
+        path: "/details/",
         element: <DetailsPage />,
       },
     ],
   },
-]);
+];
 
-export default router;
+export const router = createBrowserRouter(routes);

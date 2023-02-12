@@ -9,7 +9,17 @@ interface PhotosContextProviderProps {
 const PhotosContextProvider = ({
   children,
 }: PhotosContextProviderProps): JSX.Element => {
-  const [photos, dispatch] = useReducer(photosReducer, []);
+  const [photos, dispatch] = useReducer(photosReducer, [
+    {
+      id: "",
+      url: "",
+      username: "",
+      tags: [],
+      photographer: "",
+      alt: "",
+      description: "",
+    },
+  ]);
   const photosValue = useMemo(() => ({ photos, dispatch }), [photos]);
 
   return (
