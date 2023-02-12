@@ -1,4 +1,4 @@
-import { loadPhotosActionCreator } from "../../actions/photos/loadPhotosActionCreator";
+import loadPhotosActionCreator from "../../actions/photos/loadPhotosActionCreator";
 import { PhotoActionType } from "../../actions/photos/types";
 import photosReducer from "./photosReducer";
 
@@ -31,6 +31,7 @@ const photos = [
     username: "",
   },
 ];
+
 describe("Given a photosReducer function", () => {
   describe("When it receives an array of photos and no action", () => {
     test("Then it should return the same array of photos unchanged", () => {

@@ -7,6 +7,7 @@ import LayoutStyled from "./LayoutStyled";
 
 const Layout = (): JSX.Element => {
   const { isLoading } = useContext(UiContext);
+
   return (
     <LayoutStyled>
       <header className="main-header">

@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import Photo from "./Photo";
 
 describe("Given a Photo component", () => {
@@ -13,7 +14,8 @@ describe("Given a Photo component", () => {
           tags={[]}
           photographer={"Melquiades Heeringa"}
           username=""
-        />
+        />,
+        { wrapper: BrowserRouter }
       );
 
       const expectedText = "Melquiades Heeringa";
@@ -37,7 +39,8 @@ describe("Given a Photo component", () => {
         tags={tags}
         username={""}
         photographer={""}
-      />
+      />,
+      { wrapper: BrowserRouter }
     );
     const pageTags = screen.getAllByRole("listitem");
 

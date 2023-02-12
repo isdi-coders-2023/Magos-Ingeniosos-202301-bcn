@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import MockContextProvider from "../../mocks/MockContextProvider";
 import { mockStorePhotos, photos } from "../../mocks/mockStore";
 import PhotoList from "./PhotoList";
@@ -11,7 +12,8 @@ describe("Given a PhotoList component", () => {
       render(
         <MockContextProvider mockStore={store}>
           <PhotoList />
-        </MockContextProvider>
+        </MockContextProvider>,
+        { wrapper: BrowserRouter }
       );
 
       const photoList = screen.getAllByRole("img");
@@ -36,7 +38,8 @@ describe("Given a PhotoList component", () => {
       render(
         <MockContextProvider mockStore={store}>
           <PhotoList />
-        </MockContextProvider>
+        </MockContextProvider>,
+        { wrapper: BrowserRouter }
       );
 
       const resultAlt = screen.getAllByAltText(defaultAlt);
@@ -61,7 +64,8 @@ describe("Given a PhotoList component", () => {
       render(
         <MockContextProvider mockStore={store}>
           <PhotoList />
-        </MockContextProvider>
+        </MockContextProvider>,
+        { wrapper: BrowserRouter }
       );
 
       const resultAlt = screen.getAllByAltText(defaultAlt);

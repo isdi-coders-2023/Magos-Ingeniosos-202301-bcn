@@ -1,6 +1,8 @@
 import { useCallback, useContext } from "react";
-import { PhotoDataList, PhotosStructure } from "../data/types";
-import { loadPhotosActionCreator } from "../store/actions/photos/loadPhotosActionCreator";
+import { PhotoData, PhotoDataList, PhotosStructure } from "../data/types";
+import loadPhotoActionCreator from "../store/actions/photos/loadPhotoActionCreator";
+import loadPhotosActionCreator from "../store/actions/photos/loadPhotosActionCreator";
+
 import {
   setIsLoadingActionCreator,
   unsetIsLoadingActionCreator,
@@ -9,22 +11,23 @@ import PhotosContext from "../store/contexts/photos/PhotosContext";
 import UiContext from "../store/contexts/ui/UiContext";
 
 const useApi = (keywords: string) => {
-  const { dispatch: photoDispatch } = useContext(PhotosContext);
-  const { dispatch: uiDispatch } = useContext(UiContext);
+  const { dispatch: dispatchPhotos, dispatchDetail: dispatchPhoto } =
+    useContext(PhotosContext);
+  const { dispatch: dispatchUi } = useContext(UiContext);
 
   const getPhotos = useCallback(async () => {
     try {
-      uiDispatch(setIsLoadingActionCreator());
+      dispatchUi(setIsLoadingActionCreator());
 
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}?page=1&per_page=30&query=${keywords}&client_id=${process.env.REACT_APP_PHOTO_KEY}`
       );
 
-      const photoApi = (await response.json()) as PhotoDataList;
+      const photosApi = (await response.json()) as PhotoDataList;
 
-      uiDispatch(unsetIsLoadingActionCreator());
+      dispatchUi(unsetIsLoadingActionCreator());
 
-      const photos: PhotosStructure = photoApi.results.map((result) => ({
+      const photos: PhotosStructure = photosApi.results.map((result) => ({
         id: result.id,
         description: result.description,
         alt: result.alt_description,
@@ -34,13 +37,42 @@ const useApi = (keywords: string) => {
         username: result.user.username,
       }));
 
-      photoDispatch(loadPhotosActionCreator(photos));
+      dispatchPhotos(loadPhotosActionCreator(photos));
     } catch (error) {
       return (error as Error).message;
     }
-  }, [photoDispatch, uiDispatch, keywords]);
+  }, [dispatchPhotos, dispatchUi, keywords]);
 
-  return { getPhotos };
+  const getPhoto = useCallback(
+    async (id: string) => {
+      const photoDetailUrl = `https://api.unsplash.com/photos/${id}?client_id=${process.env.REACT_APP_PHOTO_KEY}`;
+      try {
+        dispatchUi(setIsLoadingActionCreator());
+
+        const result = await fetch(photoDetailUrl);
+        const photoApi = (await result.json()) as PhotoData;
+
+        dispatchUi(unsetIsLoadingActionCreator());
+
+        const photo = {
+          id: photoApi.id,
+          description: photoApi.description,
+          alt: photoApi.alt_description,
+          url: photoApi.urls.small,
+          tags: photoApi.tags.map((tag) => `#${tag.title}`),
+          photographer: photoApi.user.name,
+          username: photoApi.user.username,
+        };
+
+        dispatchPhoto(loadPhotoActionCreator(photo));
+      } catch (error: unknown) {
+        return (error as Error).message;
+      }
+    },
+    [dispatchUi, dispatchPhoto]
+  );
+
+  return { getPhotos, getPhoto };
 };
 
 export default useApi;

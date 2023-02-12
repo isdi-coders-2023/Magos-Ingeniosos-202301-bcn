@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import UiContextProvider from "./store/contexts/ui/UiContextProvider";
 import PhotosContextProvider from "./store/contexts/photos/PhotosContextProvider";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -15,10 +16,12 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       {
-        path: "details",
+        path: "details/:id",
         element: <DetailsPage />,
       },
     ],
+
+    errorElement: <NotFoundPage />,
   },
 ]);
 
