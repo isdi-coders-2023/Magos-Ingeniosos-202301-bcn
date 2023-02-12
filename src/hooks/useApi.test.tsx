@@ -100,15 +100,15 @@ describe("Given a useApi function", () => {
     });
   });
 
-  describe("When an error occurs", () => {
-    test("Then dispatch should not be invoked", async () => {
+  describe("When an error occurs in the getPhotos function", () => {
+    test("Then dispatchPhotos should not be invoked", async () => {
       server.use(handlerError);
 
       const {
         result: {
           current: { getPhotos },
         },
-      } = renderHook(() => useApi("magic+dragon+wizard+castle+spells"), {
+      } = renderHook(() => useApi(""), {
         wrapper: ({ children }) => {
           return (
             <UiContext.Provider value={storeUi}>
@@ -123,6 +123,32 @@ describe("Given a useApi function", () => {
       await getPhotos();
 
       expect(dispatchPhotos).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("When an error occurs in the getPhoto function", () => {
+    test("Then dispatchPhotos should not be invoked", async () => {
+      server.use(handlerError);
+
+      const {
+        result: {
+          current: { getPhotos },
+        },
+      } = renderHook(() => useApi(""), {
+        wrapper: ({ children }) => {
+          return (
+            <UiContext.Provider value={storeUi}>
+              <MockContextProvider mockStore={storePhotos}>
+                {children}
+              </MockContextProvider>
+            </UiContext.Provider>
+          );
+        },
+      });
+
+      await getPhotos();
+
+      expect(dispatchPhoto).not.toHaveBeenCalled();
     });
   });
 });
