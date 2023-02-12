@@ -12,14 +12,31 @@ const FilterStyled = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: var(--accentColor);
+      background-color: #b8bcc9;
       padding: 15px 30px;
       border-radius: 15px;
-
       cursor: pointer;
+
+      &:focus {
+        box-shadow: 0 0 25px 2px #ffba6a;
+        background-color: var(--accentColor);
+
+        i {
+          color: #000;
+        }
+      }
+
+      i {
+        color: #2f2f2f;
+      }
 
       &--show-all {
         width: 310px;
+
+        &:focus {
+          box-shadow: 0 0 25px 2px #ffba6a;
+          background-color: var(--accentColor);
+        }
       }
     }
   }
