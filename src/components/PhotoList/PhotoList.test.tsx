@@ -25,15 +25,15 @@ describe("Given a PhotoList component", () => {
   describe("When rendered with no alternative text from the Api", () => {
     test("Then it should show default alternative text", () => {
       const defaultAlt = "magic themed photography from unsplash";
-      const pepe = [];
+      const counter = [];
       photos.map((photo) => {
         if (photo.alt === "") {
-          return pepe.push(1);
+          return counter.push(1);
         }
         return null;
       });
 
-      const numberOfPhotosInList = pepe.length;
+      const numberOfPhotosInList = counter.length;
 
       render(
         <MockContextProvider mockStore={store}>
