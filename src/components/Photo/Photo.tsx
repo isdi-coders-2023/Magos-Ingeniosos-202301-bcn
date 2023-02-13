@@ -22,8 +22,8 @@ const Photo = ({
           height="255"
         />
         <div className="photo__description">
-          <h2 className="photographer">{photographer}</h2>
-          <ul className="tags">
+          <h2 className="photo__photographer">{photographer}</h2>
+          <ul className="photo__tags">
             {tags.map((tag) => (
               <li key={tag + Math.floor(Math.random() * 9999)}>{tag}</li>
             ))}

@@ -3,7 +3,7 @@ import LoadingStyled from "./LoadingStyled";
 
 const Loading = () => {
   return (
-    <LoadingStyled>
+    <LoadingStyled className="loading">
       <span className="loading__text">
         Casting...
         <i className="loading__icon fa-solid fa-wand-magic-sparkles"></i>
