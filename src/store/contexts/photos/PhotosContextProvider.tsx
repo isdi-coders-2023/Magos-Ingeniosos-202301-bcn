@@ -1,6 +1,6 @@
 import { useMemo, useReducer } from "react";
 import { PhotoStructure } from "../../../data/types";
-import photoReducer from "../../reducers/photos/photoReducer";
+import photoDetailReducer from "../../reducers/photos/photoDetailReducer";
 import photosReducer from "../../reducers/photos/photosReducer";
 import PhotosContext from "./PhotosContext";
 
@@ -23,7 +23,7 @@ const PhotosContextProvider = ({
     },
   ]);
 
-  const [photo, dispatchDetail] = useReducer(photoReducer, {
+  const [photo, dispatchDetail] = useReducer(photoDetailReducer, {
     id: "",
     url: "",
     username: "",

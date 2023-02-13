@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react";
 import { PhotoData, PhotoDataList, PhotosStructure } from "../data/types";
-import loadPhotoActionCreator from "../store/actions/photos/loadPhotoActionCreator";
+import loadPhotoDetailActionCreator from "../store/actions/photos/loadPhotoDetailActionCreator";
 import loadPhotosActionCreator from "../store/actions/photos/loadPhotosActionCreator";
 
 import {
@@ -64,7 +64,7 @@ const useApi = (keywords: string) => {
           username: photoApi.user.username,
         };
 
-        dispatchPhoto(loadPhotoActionCreator(photo));
+        dispatchPhoto(loadPhotoDetailActionCreator(photo));
       } catch (error: unknown) {
         return (error as Error).message;
       }

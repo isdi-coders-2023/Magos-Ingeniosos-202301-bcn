@@ -1,6 +1,6 @@
-import loadPhotoActionCreator from "../../actions/photos/loadPhotoActionCreator";
+import loadPhotoDetailActionCreator from "../../actions/photos/loadPhotoDetailActionCreator";
 import { PhotoActionType } from "../../actions/photos/types";
-import photoReducer from "./photoReducer";
+import photoDetailReducer from "./photoDetailReducer";
 
 const photo = {
   id: "",
@@ -12,12 +12,12 @@ const photo = {
   username: "",
 };
 
-describe("Given a photoReducer function", () => {
+describe("Given a photoDetailReducer function", () => {
   describe("When it receives data of one photo and no action", () => {
     test("Then it should return the same photo data unchanged", () => {
       const defaultAction = { type: PhotoActionType.default, payload: [] };
 
-      const result = photoReducer(photo, defaultAction);
+      const result = photoDetailReducer(photo, defaultAction);
 
       expect(result).toStrictEqual(photo);
     });
@@ -25,7 +25,10 @@ describe("Given a photoReducer function", () => {
 
   describe("When it receives data of one photo and a LoadPhotoAction", () => {
     test("Then it should return that photo", () => {
-      const result = photoReducer(photo, loadPhotoActionCreator(photo));
+      const result = photoDetailReducer(
+        photo,
+        loadPhotoDetailActionCreator(photo)
+      );
 
       expect(result).toStrictEqual(photo);
     });

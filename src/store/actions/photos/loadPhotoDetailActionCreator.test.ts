@@ -1,4 +1,4 @@
-import loadPhotoActionCreator from "./loadPhotoActionCreator";
+import loadPhotoDetailActionCreator from "./loadPhotoDetailActionCreator";
 
 const photo = {
   id: "",
@@ -10,16 +10,16 @@ const photo = {
   username: "",
 };
 
-describe("Given a loadPhotoActionCreator function", () => {
+describe("Given a loadPhotoDetailActionCreator function", () => {
   describe("When it receives data of one photo", () => {
     test("Then it should return an action object with property 'type'", () => {
-      const result = loadPhotoActionCreator(photo);
+      const result = loadPhotoDetailActionCreator(photo);
 
       expect(result).toHaveProperty("type");
     });
 
     test("Then it should return an action object with property 'payload'", () => {
-      const result = loadPhotoActionCreator(photo);
+      const result = loadPhotoDetailActionCreator(photo);
 
       expect(result).toHaveProperty("payload");
     });
