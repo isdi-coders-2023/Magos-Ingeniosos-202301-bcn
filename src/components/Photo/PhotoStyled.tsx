@@ -24,21 +24,21 @@ const PhotoStyled = styled.article`
       justify-items: center;
       object-fit: cover;
     }
-  }
 
-  .photographer {
-    font-size: 24px;
-    padding-left: 12px;
-    padding-left: 12px;
-  }
+    &__photographer {
+      font-size: 24px;
+      padding-left: 12px;
+      padding-left: 12px;
+    }
 
-  .tags {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    font-size: 18px;
-    padding-left: 12px;
-    padding-left: 12px;
+    &__tags {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 18px;
+      padding-left: 12px;
+      padding-left: 12px;
+    }
   }
 `;
 
