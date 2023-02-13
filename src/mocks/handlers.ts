@@ -1,6 +1,8 @@
 import { rest } from "msw";
 import { PhotoData, PhotoDataList } from "../data/types";
 
+const detailUrl = "https://api.unsplash.com/photos/";
+
 const photoData = {
   id: "",
   description: "",
@@ -26,9 +28,8 @@ export const handlerListSuccess = rest.get(
     )
 );
 
-export const handlerDetailsSuccess = rest.get(
-  `https://api.unsplash.com/photos/`,
-  (_, res, ctx) => res(ctx.status(200), ctx.json(photoData))
+export const handlerDetailsSuccess = rest.get(`${detailUrl}`, (_, res, ctx) =>
+  res(ctx.status(200), ctx.json(photoData))
 );
 
 export const handlerListError = rest.get(
@@ -36,7 +37,6 @@ export const handlerListError = rest.get(
   (_, res, ctx) => res(ctx.status(404))
 );
 
-export const handlerDetailsError = rest.get(
-  `https://api.unsplash.com/photos/`,
-  (_, res, ctx) => res(ctx.status(404))
+export const handlerDetailsError = rest.get(`${detailUrl}`, (_, res, ctx) =>
+  res(ctx.status(404))
 );
