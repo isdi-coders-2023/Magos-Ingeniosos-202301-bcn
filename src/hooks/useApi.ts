@@ -1,6 +1,7 @@
 import { useCallback, useContext } from "react";
 import { PhotoData, PhotoDataList, PhotosStructure } from "../data/types";
-import loadPhotoActionCreator from "../store/actions/photos/loadPhotoActionCreator";
+import { detailUrl } from "../mocks/handlers";
+import loadPhotoDetailActionCreator from "../store/actions/photos/loadPhotoDetailActionCreator";
 import loadPhotosActionCreator from "../store/actions/photos/loadPhotosActionCreator";
 
 import {
@@ -14,13 +15,15 @@ const useApi = (keywords: string) => {
   const { dispatch: dispatchPhotos, dispatchDetail: dispatchPhoto } =
     useContext(PhotosContext);
   const { dispatch: dispatchUi } = useContext(UiContext);
+  const urlParams = `?page=1&per_page=9&query=`;
+  const urlClientId = `&client_id=`;
 
   const getPhotos = useCallback(async () => {
     try {
       dispatchUi(setIsLoadingActionCreator());
 
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}?page=1&per_page=9&query=${keywords}&client_id=${process.env.REACT_APP_PHOTO_KEY}`
+        `${process.env.REACT_APP_API_URL}${urlParams}${keywords}${urlClientId}${process.env.REACT_APP_PHOTO_KEY}`
       );
 
       const photosApi = (await response.json()) as PhotoDataList;
@@ -41,12 +44,14 @@ const useApi = (keywords: string) => {
     } catch (error) {
       return (error as Error).message;
     }
-  }, [dispatchPhotos, dispatchUi, keywords]);
+  }, [dispatchPhotos, dispatchUi, keywords, urlClientId, urlParams]);
 
-  const getPhoto = useCallback(
+  const getPhotoDetail = useCallback(
     async (id: string) => {
+      const urlDetailId = `?client_id=`;
+
       try {
-        const photoDetailUrl = `https://api.unsplash.com/photos/${id}?client_id=${process.env.REACT_APP_PHOTO_KEY}`;
+        const photoDetailUrl = `${detailUrl}${id}${urlDetailId}${process.env.REACT_APP_PHOTO_KEY}`;
         dispatchUi(setIsLoadingActionCreator());
 
         const result = await fetch(photoDetailUrl);
@@ -64,15 +69,15 @@ const useApi = (keywords: string) => {
           username: photoApi.user.username,
         };
 
-        dispatchPhoto(loadPhotoActionCreator(photo));
+        dispatchPhoto(loadPhotoDetailActionCreator(photo));
       } catch (error: unknown) {
         return (error as Error).message;
       }
     },
-    [dispatchUi, dispatchPhoto]
+    [dispatchPhoto, dispatchUi]
   );
 
-  return { getPhotos, getPhoto };
+  return { getPhotos, getPhoto: getPhotoDetail };
 };
 
 export default useApi;

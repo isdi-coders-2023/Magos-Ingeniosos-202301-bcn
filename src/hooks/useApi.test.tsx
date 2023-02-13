@@ -9,7 +9,7 @@ import {
   mockUiStore,
   mockUiSetIsLoadingAction,
   mockUiUnsetIsLoadingAction,
-  mockDispatchPhoto,
+  mockDispatchPhotoDetail,
   mockActionPhoto,
 } from "../mocks/mockStore";
 import { server } from "../mocks/server";
@@ -18,7 +18,7 @@ import UiContext from "../store/contexts/ui/UiContext";
 import useApi from "./useApi";
 
 const dispatchPhotos = mockDispatchPhotos;
-const dispatchPhoto = mockDispatchPhoto;
+const dispatchPhoto = mockDispatchPhotoDetail;
 const storePhotos = mockStorePhotos;
 const actionPhotos = mockActionPhotos;
 

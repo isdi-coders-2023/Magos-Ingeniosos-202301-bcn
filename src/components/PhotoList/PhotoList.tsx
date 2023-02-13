@@ -8,7 +8,7 @@ const PhotoList = (): JSX.Element => {
   const defaultAlt = "magic themed photography from unsplash";
 
   return (
-    <PhotoListStyled className="photo__list list">
+    <PhotoListStyled>
       {photos.map((photo) => (
         <li key={photo.id}>
           <Photo

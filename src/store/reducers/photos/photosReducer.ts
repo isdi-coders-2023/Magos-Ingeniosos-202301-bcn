@@ -11,13 +11,12 @@ const photosReducer = (
 ) => {
   let newPhotos;
 
-  switch (action.type) {
-    case PhotoActionType.loadPhotos:
-      newPhotos = [...(action as LoadPhotosAction).payload];
-      break;
-    default:
-      newPhotos = currentPhotos;
+  if (action.type === PhotoActionType.loadPhotos) {
+    newPhotos = [...(action as LoadPhotosAction).payload];
+  } else {
+    newPhotos = currentPhotos;
   }
+
   return newPhotos;
 };
 

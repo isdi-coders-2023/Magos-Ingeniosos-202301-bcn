@@ -5,7 +5,10 @@ import {
   PhotosAction,
 } from "../../actions/photos/types";
 
-const photoReducer = (currentPhoto: PhotoStructure, action: PhotosAction) => {
+const photoDetailReducer = (
+  currentPhoto: PhotoStructure,
+  action: PhotosAction
+) => {
   let newPhoto;
 
   if (action.type === PhotoActionType.loadPhoto) {
@@ -15,4 +18,4 @@ const photoReducer = (currentPhoto: PhotoStructure, action: PhotosAction) => {
   return newPhoto;
 };
 
-export default photoReducer;
+export default photoDetailReducer;

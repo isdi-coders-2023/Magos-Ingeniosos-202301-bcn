@@ -14,9 +14,9 @@ describe("Given a DetailsPage Component", () => {
         { wrapper: BrowserRouter }
       );
 
-      const photo = screen.getByRole("img");
+      const photoDetail = screen.getByRole("img");
 
-      expect(photo).toBeInTheDocument();
+      expect(photoDetail).toBeInTheDocument();
     });
   });
 });

@@ -11,7 +11,7 @@ const UiContextProvider = ({
 }: SetIsLoadingContextProviderProps): JSX.Element => {
   const [isLoading, dispatch] = useReducer(uiReducer, true);
 
-  const store = useMemo(() => ({ isLoading, dispatch }), [isLoading, dispatch]);
+  const store = useMemo(() => ({ isLoading, dispatch }), [isLoading]);
 
   return <UiContext.Provider value={store}>{children}</UiContext.Provider>;
 };
