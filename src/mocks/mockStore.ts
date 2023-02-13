@@ -6,7 +6,7 @@ export const dispatchPhotos: React.Dispatch<PhotosAction> = jest.fn();
 export const dispatchPhoto: React.Dispatch<PhotosAction> = jest.fn();
 export const photos: PhotosStructure = [
   {
-    id: "",
+    id: "1",
     description: "",
     alt: "alternative text",
     url: "",
@@ -15,7 +15,7 @@ export const photos: PhotosStructure = [
     username: "",
   },
   {
-    id: "",
+    id: "2",
     description: "",
     alt: "",
     url: "",
@@ -24,7 +24,7 @@ export const photos: PhotosStructure = [
     username: "",
   },
   {
-    id: "",
+    id: "3",
     description: "",
     alt: "",
     url: "",
