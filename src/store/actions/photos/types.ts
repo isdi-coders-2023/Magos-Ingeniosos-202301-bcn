@@ -3,7 +3,6 @@ import { PhotosStructure, PhotoStructure } from "../../../data/types";
 export enum PhotoActionType {
   loadPhotos,
   loadPhoto,
-  default,
 }
 
 export interface PhotosAction {
