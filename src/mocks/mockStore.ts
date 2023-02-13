@@ -33,7 +33,7 @@ export const photos: PhotosStructure = [
     username: "",
   },
 ];
-const photo = {
+const photoDetail = {
   id: "",
   description: "",
   alt: "",
@@ -47,17 +47,20 @@ export const mockStorePhotos = {
   dispatch: dispatchPhotos,
   photos,
   dispatchDetail: dispatchPhoto,
-  photo,
+  photo: photoDetail,
 };
 export const mockDispatchPhotos = jest.spyOn(mockStorePhotos, "dispatch");
-export const mockDispatchPhoto = jest.spyOn(mockStorePhotos, "dispatchDetail");
+export const mockDispatchPhotoDetail = jest.spyOn(
+  mockStorePhotos,
+  "dispatchDetail"
+);
 
 export interface MockActionPhotos {
   type: PhotoActionType;
   payload: PhotosStructure;
 }
 
-export interface MockActionPhoto {
+export interface MockActionPhotoDetail {
   type: PhotoActionType;
   payload: PhotoStructure;
 }
@@ -79,7 +82,7 @@ export const mockActionPhotos: MockActionPhotos = {
   ],
 };
 
-export const mockActionPhoto: MockActionPhoto = {
+export const mockActionPhoto: MockActionPhotoDetail = {
   type: PhotoActionType.loadPhoto,
   payload: {
     id: "",
