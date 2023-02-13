@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { PhotoData, PhotoDataList } from "../data/types";
 
-const detailUrl = "https://api.unsplash.com/photos/";
+export const detailUrl = "https://api.unsplash.com/photos/";
 
 const photoData = {
   id: "",
