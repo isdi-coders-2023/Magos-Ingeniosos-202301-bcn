@@ -102,6 +102,7 @@ describe("Given a useApi function", () => {
 
   describe("When an error occurs in the getPhotos function", () => {
     beforeEach(() => server.resetHandlers(handlerListError));
+
     test("Then dispatchPhotos should not be invoked", async () => {
       const {
         result: {
@@ -127,6 +128,7 @@ describe("Given a useApi function", () => {
 
   describe("When an error occurs in the getPhoto function", () => {
     beforeEach(() => server.resetHandlers(handlerDetailsError));
+
     test("Then dispatchPhoto should not be invoked", async () => {
       const id = "";
       const {
