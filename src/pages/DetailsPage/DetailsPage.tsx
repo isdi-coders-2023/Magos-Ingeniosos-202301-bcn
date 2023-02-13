@@ -15,7 +15,7 @@ const DetailsPage = (): JSX.Element => {
   const { photo } = useContext(PhotosContext);
 
   return (
-    <DetailsPageStyled className="details__styled">
+    <DetailsPageStyled className="details">
       <div className="details__container">
         <img
           className="details__image"
